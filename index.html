@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="css/style.css"/>
+	</head>
+	<body>
+		<header id="top" class="clear">
+			<h3><img src="img/logo.png"/></h3>
+			<ul class="clear" id="nav">
+				<li>电影</li>
+				<li>图书</li>
+				<li>广播</li>
+				<li>小组</li>
+				<li id="hunt"><img src="img/ss.png"/></li>
+			</ul>
+		</header>
+		<div id="page">
+			<div id="con">
+				<ul class="clear" id="nomic">
+					<li><a href="#">影院热映</a></li>
+					<li><a href="#">华宇新碟榜</a></li>
+					<li><a href="#">豆瓣时间</a></li>
+					<li><a href="#">使用豆瓣APP</a></li>
+				</ul>
+			</div>
+		</div>
+	<script>
+		var pixelRatio = 1 / window.devicePixelRatio;
+	
+		document.write('<meta name="viewport" content="width=device-width,initial-scale='+ pixelRatio +',minimum-scale='+ pixelRatio +',maximum-scale='+ pixelRatio +',user-scalable=no" />');
+
+		var html=document.getElementsByTagName("html")[0];
+		var pageWidth=html.getBoundingClientRect().width;
+		html.style.fontSize=pageWidth/16+'px';
+	</script>
+	</body>
+</html>
