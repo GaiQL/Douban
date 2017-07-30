@@ -21,7 +21,7 @@ a{
     text-decoration:none;
     color:#000;
 }
-p,ul,li,dt,dd,h3{
+p,ul,li,dt,dd,h3,h4,dl{
     margin:0;
     padding:0;
 }
@@ -104,4 +104,89 @@ body{
     height:86/@rem;
     line-height:86/@rem;
     background:#f6f6f6;
+}
+.show{
+    display:block;
+    border-bottom:1/@rem solid #e0e0e0;
+    padding-bottom:55/@rem;
+    padding-top:45/@rem;
+}
+.show dl dd{
+    float:left;
+    width:435/@rem;
+}
+.show dl dd h4{
+    font-size:32/@rem;
+    color:#000;
+    font-weight:normal;
+    line-height:46/@rem;
+}
+.show dl dd p{
+    font-size:24/@rem;
+    color:#a6a6a6;
+    line-height:34/@rem;
+    margin-top:16/@rem;
+}
+.show dl dt{
+    float:right;
+    margin-top:3/@rem;
+}
+.show dl dt img{
+    width:166/@rem;
+    height:166/@rem;;
+}
+.lito{
+    color:#cccccc;
+    margin-top:25/@rem;
+    font-size:24/@rem;
+    line-height:24/@rem;
+}
+.lito p:nth-of-type(1){
+    float:left;
+}
+.lito p:nth-of-type(2){
+    float:right;
+}
+.list{
+    margin-top:6/@rem;
+}
+.scenic div:nth-of-type(1) img{
+    width:481/@rem;
+    height:312/@rem;
+}
+.scenic div:nth-of-type(1){
+    float:left;
+    margin-bottom:8/@rem;
+}
+.scenic div:nth-of-type(2){
+    float:right;
+    width:152/@rem;
+}
+.scenic div:nth-of-type(2) img{
+    width:152/@rem;
+    height:152/@rem;
+}
+.scenic div:nth-of-type(2) div:nth-of-type(2){
+    position:relative;
+}
+.shade{
+    width:152/@rem;
+    height:152/@rem;
+    background:#000;
+    opacity:0.5;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.pdt{
+    font-size:20/@rem;
+    color:#fff;
+    position:absolute;
+    line-height:20/@rem;
+    top:56/@rem;
+    width:152/@rem;
+    text-align:center;
+}
+.show dl .long{
+    width:100%;
 }

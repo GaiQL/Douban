@@ -25,7 +25,9 @@ ul,
 li,
 dt,
 dd,
-h3 {
+h3,
+h4,
+dl {
   margin: 0;
   padding: 0;
 }
@@ -109,4 +111,89 @@ body {
   height: 1.91111111rem;
   line-height: 1.91111111rem;
   background: #f6f6f6;
+}
+.show {
+  display: block;
+  border-bottom: 0.02222222rem solid #e0e0e0;
+  padding-bottom: 1.22222222rem;
+  padding-top: 1rem;
+}
+.show dl dd {
+  float: left;
+  width: 9.66666667rem;
+}
+.show dl dd h4 {
+  font-size: 0.71111111rem;
+  color: #000;
+  font-weight: normal;
+  line-height: 1.02222222rem;
+}
+.show dl dd p {
+  font-size: 0.53333333rem;
+  color: #a6a6a6;
+  line-height: 0.75555556rem;
+  margin-top: 0.35555556rem;
+}
+.show dl dt {
+  float: right;
+  margin-top: 0.06666667rem;
+}
+.show dl dt img {
+  width: 3.68888889rem;
+  height: 3.68888889rem;
+}
+.lito {
+  color: #cccccc;
+  margin-top: 0.55555556rem;
+  font-size: 0.53333333rem;
+  line-height: 0.53333333rem;
+}
+.lito p:nth-of-type(1) {
+  float: left;
+}
+.lito p:nth-of-type(2) {
+  float: right;
+}
+.list {
+  margin-top: 0.13333333rem;
+}
+.scenic div:nth-of-type(1) img {
+  width: 10.68888889rem;
+  height: 6.93333333rem;
+}
+.scenic div:nth-of-type(1) {
+  float: left;
+  margin-bottom: 0.17777778rem;
+}
+.scenic div:nth-of-type(2) {
+  float: right;
+  width: 3.37777778rem;
+}
+.scenic div:nth-of-type(2) img {
+  width: 3.37777778rem;
+  height: 3.37777778rem;
+}
+.scenic div:nth-of-type(2) div:nth-of-type(2) {
+  position: relative;
+}
+.shade {
+  width: 3.37777778rem;
+  height: 3.37777778rem;
+  background: #000;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.pdt {
+  font-size: 0.44444444rem;
+  color: #fff;
+  position: absolute;
+  line-height: 0.44444444rem;
+  top: 1.24444444rem;
+  width: 3.37777778rem;
+  text-align: center;
+}
+.show dl .long {
+  width: 100%;
 }
