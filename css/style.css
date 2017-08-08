@@ -25,6 +25,9 @@ ul,
 li,
 dt,
 dd,
+h1,
+h2,
+h5,
 h3,
 h4,
 dl {
@@ -197,4 +200,59 @@ body {
 }
 .show dl .long {
   width: 100%;
+}
+#moviecon {
+  padding: 0rem 0.33333333rem;
+}
+#moviecon h3 {
+  font-weight: normal;
+  font-size: 1.06666667rem;
+  line-height: 1.73333333rem;
+  padding-left: 0.62222222rem;
+  margin-top: 0.55555556rem;
+  margin-bottom: 0.95555556rem;
+}
+.movie_propaganda dt img {
+  width: 3.91111111rem;
+  height: 5.55555556rem;
+}
+.movie_propaganda {
+  width: 3.91111111rem;
+  padding: 0rem 0.6rem;
+  margin-bottom: 1.24444444rem;
+  float: left;
+}
+.movie_propaganda dd p:nth-of-type(1) {
+  font-size: 0.57777778rem;
+  margin-top: 0.31111111rem;
+  text-align: center;
+  line-height: 0.57777778rem;
+}
+.movie_propaganda dd p:nth-of-type(2) {
+  font-size: 0.66666667rem;
+}
+.star span {
+  display: block;
+  float: left;
+  width: 0.44444444rem;
+  height: 0.44444444rem;
+}
+.star {
+  padding-top: 0.33333333rem;
+  padding-left: 0.26666667rem;
+}
+.ystar {
+  background: url('../img/ystar.png') no-repeat center;
+}
+.hstar {
+  background: url('../img/hstar.png') no-repeat center;
+}
+.star b {
+  float: left;
+  padding-left: 0.11111111rem;
+  display: block;
+  font-weight: normal;
+  font-size: 0.44444444rem;
+  line-height: 0.44444444rem;
+  color: #949494;
 }

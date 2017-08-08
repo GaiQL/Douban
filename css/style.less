@@ -21,7 +21,7 @@ a{
     text-decoration:none;
     color:#000;
 }
-p,ul,li,dt,dd,h3,h4,dl{
+p,ul,li,dt,dd,h1,h2,h5,h3,h4,dl{
     margin:0;
     padding:0;
 }
@@ -53,7 +53,7 @@ body{
 }
 #top h3{
     float:left;
-    margin-left:32/@rem;    
+    margin-left:32/@rem;
 }
 #nav{
     float:right
@@ -190,4 +190,59 @@ body{
 }
 .show dl .long{
     width:100%;
+}
+#moviecon{
+  padding:0/@rem 15/@rem;
+}
+#moviecon h3{
+  font-weight:normal;
+  font-size:48/@rem;
+  line-height:78/@rem;
+  padding-left:28/@rem;
+  margin-top:25/@rem;
+  margin-bottom:43/@rem;
+}
+.movie_propaganda dt img{
+  width:176/@rem;
+  height:250/@rem;
+}
+.movie_propaganda{
+  width:176/@rem;
+  padding:0/@rem 27/@rem;
+  margin-bottom:56/@rem;
+  float:left;
+}
+.movie_propaganda dd p:nth-of-type(1){
+  font-size:26/@rem;
+  margin-top:14/@rem;
+  text-align:center;
+  line-height:26/@rem;
+}
+.movie_propaganda dd p:nth-of-type(2){
+  font-size:30/@rem;
+}
+.star span{
+  display:block;
+  float:left;
+  width:20/@rem;
+  height:20/@rem;
+}
+.star{
+  padding-top:15/@rem;
+  padding-left:12/@rem;
+}
+.ystar{
+  background:url('../img/ystar.png') no-repeat center;
+}
+.hstar{
+  background:url('../img/hstar.png') no-repeat center;
+}
+.star b{
+  float:left;
+  padding-left:5/@rem;
+  display:block;
+  font-weight:normal;
+  font-size:20/@rem;
+  line-height:20/@rem;
+  color:#949494;
 }
