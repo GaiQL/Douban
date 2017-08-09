@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script src="jquery-3.1.1.js"></script>
+    <script>
+      $.ajax({
+        url:'https://api.douban.com/v2/movie/search?tag=%E5%90%8C%E6%97%B6%E5%85%A5%E9%80%89IMDB250%E5%92%8C%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1250%E7%9A%84%E7%94%B5%E5%BD%B1',
+        dataType:'jsonp',
+        success:function(data){
+          console.log(data);
+        }
+      })
+    </script>
+  </body>
+</html>

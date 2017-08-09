@@ -256,3 +256,94 @@ body {
   line-height: 0.44444444rem;
   color: #949494;
 }
+.moive_model {
+  padding-top: 0.53333333rem;
+  padding-bottom: 0.88888889rem;
+  overflow: hidden;
+}
+.moive_head h3 {
+  float: left;
+  font-size: 0.71111111rem;
+  font-weight: normal;
+}
+.moive_head p {
+  float: right;
+  color: #63c268;
+  font-size: 0.62222222rem;
+}
+.moive_head {
+  padding: 0rem 0.8rem;
+  height: 0.88888889rem;
+  line-height: 0.88888889rem;
+}
+.moive_show li {
+  float: left;
+  margin-left: 0.35555556rem;
+}
+.moive_show li:nth-of-type(1) {
+  margin-left: 0.8rem;
+}
+.moive_show {
+  padding-top: 0.75555556rem;
+  width: 53.33333333rem;
+}
+.moive_showImg {
+  width: 4.44444444rem;
+  height: 6.35555556rem;
+  background: url();
+}
+.moive_showText {
+  font-size: 0.62222222rem;
+  line-height: 0.62222222rem;
+  margin-top: 0.37777778rem;
+  text-align: center;
+}
+.moive_star span {
+  display: block;
+  float: left;
+  width: 0.44444444rem;
+  height: 0.44444444rem;
+}
+.moive_star {
+  padding-left: 0.57777778rem;
+  padding-top: 0.31111111rem;
+}
+.moive_star b {
+  float: left;
+  padding-left: 0.11111111rem;
+  display: block;
+  font-weight: normal;
+  font-size: 0.44444444rem;
+  line-height: 0.44444444rem;
+  color: #949494;
+}
+.moive_findmoive {
+  padding-top: 0.55555556rem;
+  overflow: hidden;
+}
+.moive_findmoiveList {
+  width: 40rem;
+  padding-top: 0.71111111rem;
+  padding-left: 0.62222222rem;
+}
+.moive_findmoiveList li {
+  line-height: 2.22222222rem;
+  font-size: 0.62222222rem;
+  border: 0.04444444rem solid #87ceeb;
+  margin-left: 0.35555556rem;
+  margin-bottom: 0.35555556rem;
+  border-radius: 0.11111111rem;
+  float: left;
+  padding: 0rem 1.17777778rem;
+}
+.moive_classify {
+  padding-top: 1.17777778rem;
+}
+.moive_classifylist li {
+  font-size: 0.62222222rem;
+  color: #3ebb6f;
+  line-height: 1.93333333rem;
+  padding-left: 0.71111111rem;
+  width: 7.91111111rem;
+  float: left;
+}
