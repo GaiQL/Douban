@@ -465,7 +465,7 @@ img {
 .moive_detailedIntro {
   max-height: 10000px;
 }
-.moive_detailedIntro h3 {
+.moive_detailedSectionTitle {
   font-size: 0.62222222rem;
   font-weight: normal;
   line-height: 2.13333333rem;
@@ -475,4 +475,38 @@ img {
   font-size: 0.62222222rem;
   line-height: 0.97777778rem;
   color: #494949;
+}
+.moive_detailedSectionTitle {
+  font-size: 0.62222222rem;
+  font-weight: normal;
+  line-height: 2.13333333rem;
+  color: #aaa;
+}
+.moive_detailedmakerList li {
+  float: left;
+  width: 3.33333333rem;
+  margin-right: 0.35555556rem;
+}
+.moive_detailedmakerList li img {
+  width: 3.33333333rem;
+  height: 4.77777778rem;
+}
+.moive_detailedmakerList li p {
+  text-align: center;
+  font-size: 0.55555556rem;
+}
+.moive_detailedmakerList li p:nth-of-type(1) {
+  line-height: 0.97777778rem;
+  margin-top: 0.22222222rem;
+  color: #494949;
+}
+.moive_detailedmakerList li p:nth-of-type(2) {
+  line-height: 1.55555556rem;
+  color: #aaa;
+}
+.moive_detailedmaker {
+  overflow: hidden;
+}
+.moive_detailedmakerList {
+  width: 44.44444444rem;
 }
