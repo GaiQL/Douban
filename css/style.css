@@ -510,3 +510,146 @@ img {
 .moive_detailedmakerList {
   width: 44.44444444rem;
 }
+.moive_ShortEvaList li {
+  margin-top: 0.97777778rem;
+}
+.moive_ShortEvaListTop img {
+  width: 1.6rem;
+  height: 1.6rem;
+  float: left;
+}
+.moive_ShortEvaListTopR {
+  float: left;
+  margin-left: 0.44444444rem;
+}
+.moive_ShortEvaListTopR p:nth-of-type(1) {
+  font-size: 0.66666667rem;
+  line-height: 0.88888889rem;
+  color: #494949;
+}
+.moive_ShortEvaListTopR p:nth-of-type(2) {
+  font-size: 0.44444444rem;
+  line-height: 1.06666667rem;
+  color: #aaa;
+}
+.moive_ShortEvaListBottom {
+  padding-left: 1.82222222rem;
+  padding-right: 0.22222222rem;
+  margin-top: 0.26666667rem;
+  max-height: 222.22222222rem;
+}
+.moive_ShortEvaListBottom p:nth-of-type(1) {
+  font-size: 0.62222222rem;
+  line-height: 0.97777778rem;
+}
+.moive_checkAll {
+  font-size: 0.62222222rem;
+  line-height: 1.42222222rem;
+  text-align: center;
+  color: #5ac881;
+}
+.moive_ShortEvaListBottomBto span {
+  display: block;
+}
+.moive_ShortEvaListBottomBto span:nth-of-type(1) {
+  float: left;
+  color: #ccc;
+  font-size: 0.53333333rem;
+  line-height: 1.77777778rem;
+  background: url(../img/good.png) no-repeat 0.15555556rem center;
+  background-size: 0.6rem 0.68888889rem;
+  padding-left: 1.04444444rem;
+}
+.moive_ShortEvaListBottomBto span:nth-of-type(2) {
+  width: 1.04444444rem;
+  height: 1.04444444rem;
+  margin-top: 0.37777778rem;
+  margin-right: 0.22222222rem;
+  float: right;
+  background: url(../img/dort.png) no-repeat;
+  background-size: 1.04444444rem 1.04444444rem;
+}
+.moive_detailedDiscussL p:nth-of-type(1) {
+  font-size: 0.75555556rem;
+  line-height: 1.06666667rem;
+}
+.moive_detailedDiscussL p:nth-of-type(2) {
+  font-size: 0.62222222rem;
+  line-height: 1.11111111rem;
+  color: #42bd56;
+}
+.moive_detailedDiscussL p {
+  max-height: 222.22222222rem;
+}
+.moive_detailedDiscussL {
+  padding-bottom: 0.44444444rem;
+  padding-top: 0.57777778rem;
+  border-bottom: 0.04444444rem solid #e8e8e8;
+}
+.moive_detailedDiscuss .moive_detailedDiscussL:last-of-type {
+  border: none;
+}
+.moive_detailedMaybeLikeList {
+  position: relative;
+  width: 44.44444444rem;
+  padding-left: 0.8rem;
+}
+.moive_detailedMaybeLikeListL {
+  width: 3.55555556rem;
+  margin-right: 0.48888889rem;
+  float: left;
+}
+.moive_detailedMaybeLikeListL img {
+  width: 3.55555556rem;
+  height: 4.97777778rem;
+}
+.moive_detailedMaybeLikeListL P {
+  font-size: 0.62222222rem;
+  line-height: 1.11111111rem;
+  margin-top: 0.44444444rem;
+  text-align: center;
+}
+.moive_detailedMaybeLikeListOut {
+  height: 7.55555556rem;
+  width: 16rem;
+  overflow: hidden;
+  position: relative;
+  left: -0.8rem;
+}
+.moive_detailedAppraise {
+  margin-top: 0.31111111rem;
+}
+.moive_detailedAppraiseListL h4 {
+  font-size: 0.75555556rem;
+  line-height: 1.02222222rem;
+  color: #494949;
+  font-weight: normal;
+}
+.moive_detailedAppraiseListL * {
+  max-height: 222.22222222rem;
+}
+.moive_detailedAppraiseListL div p:nth-of-type(1) {
+  font-size: 0.48888889rem;
+  line-height: 1.2rem;
+  margin-top: 0.08888889rem;
+  float: left;
+}
+.moive_detailedAppraiseListL p {
+  font-size: 0.53333333rem;
+  line-height: 0.8rem;
+  color: #aaa;
+}
+.moive_detailedAppraiseListLBottom {
+  padding-top: 0.35555556rem;
+}
+.moive_detailedAppraiseListLS {
+  float: left;
+}
+.moive_detailedAppraiseListLS span {
+  background-size: 0.53333333rem 0.53333333rem;
+  padding-top: 0.31111111rem;
+  margin-right: 0.06666667rem;
+}
+.moive_detailedAppraiseListL {
+  padding-bottom: 0.93333333rem;
+}
