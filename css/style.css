@@ -276,7 +276,7 @@ img {
 }
 .moive_show li {
   float: left;
-  margin-left: 0.35555556rem;
+  margin-right: 0.35555556rem;
 }
 .moive_show li:nth-of-type(1) {
   margin-left: 0.8rem;
@@ -612,7 +612,7 @@ img {
 .moive_detailedMaybeLikeListOut {
   height: 7.55555556rem;
   width: 16rem;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
   left: -0.8rem;
 }
@@ -652,4 +652,106 @@ img {
 }
 .moive_detailedAppraiseListL {
   padding-bottom: 0.93333333rem;
+}
+.move_margin {
+  padding: 0rem 0.8rem;
+}
+.move_filmmakerTitle {
+  font-size: 1.11111111rem;
+  line-height: 1.6rem;
+  margin-top: 1.28888889rem;
+  font-weight: normal;
+}
+.move_filmmakerIntroduceLeft {
+  float: left;
+  width: 8.88888889rem;
+}
+.move_filmmakerIntroduce img {
+  float: right;
+  width: 4.44444444rem;
+  height: 6.35555556rem;
+  margin-top: 0.08888889rem;
+}
+.move_filmmakerIntroduceLeft p:nth-of-type(1) {
+  font-size: 0.62222222rem;
+  line-height: 1.11111111rem;
+  margin-bottom: 0.57777778rem;
+  color: #aaa;
+}
+.move_filmmakerIntroduceLeft p:nth-of-type(2) {
+  font-size: 0.57777778rem;
+  line-height: 0.97777778rem;
+}
+.move_filmmakerIntroduceLeft p:nth-of-type(3) {
+  font-size: 0.57777778rem;
+  line-height: 0.97777778rem;
+  color: #42bd56;
+}
+.move_filmmakerCollect {
+  font-size: 0.62222222rem;
+  line-height: 1.33333333rem;
+  border: 0.04444444rem solid #ffb712;
+  border-radius: 0.13333333rem;
+  width: 4.93333333rem;
+  text-align: center;
+  color: #ffb712;
+  margin-top: 1.73333333rem;
+  margin-bottom: 0.71111111rem;
+}
+.move_filmmakerBTitle {
+  font-size: 0.62222222rem;
+  line-height: 2.17777778rem;
+  color: #aaa;
+  font-weight: normal;
+}
+.move_filmmakerData p {
+  font-size: 0.66666667rem;
+  line-height: 0.97777778rem;
+}
+.move_filmmakerData * {
+  max-height: 222.22222222rem;
+}
+.move_filmmakerS {
+  height: 5.33333333rem;
+  padding-bottom: 0.75555556rem;
+}
+.move_filmmakerS li {
+  margin-right: 0.13333333rem;
+}
+.move_filmmakerS li img {
+  height: 5.33333333rem;
+}
+.move_filmmakerWorks {
+  overflow: auto;
+}
+.move_filmmakerWorks ul li:first-of-type {
+  margin-left: 0;
+}
+.move_filmmakerWorks ul {
+  padding-top: 0;
+}
+.move_filmmakerCooperation {
+  width: 44.44444444rem;
+}
+.move_filmmakerCooperationL {
+  float: left;
+  width: 3.33333333rem;
+  margin-right: 0.35555556rem;
+}
+.move_filmmakerCooperationL img {
+  width: 3.33333333rem;
+  height: 4.77777778rem;
+}
+.move_filmmakerCooperationL p {
+  font-size: 0.57777778rem;
+  line-height: 0.8rem;
+  margin-top: 0.33333333rem;
+  text-align: center;
+}
+.move_filmmakerIndividual {
+  margin-bottom: 1.33333333rem;
+}
+.move_discussTitle {
+  font-size: 0.97777778rem;
+  font-weight: normal;
 }
