@@ -55,6 +55,24 @@ img {
   top: 0rem;
   left: 0rem;
 }
+#account {
+  width: 2.48888889rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+#account img {
+  width: 1.11111111rem;
+  height: 1.11111111rem;
+  margin-left: 0.55555556rem;
+}
+#account span {
+  line-height: 0.66666667rem;
+  font-size: 0.55555556rem;
+  display: block;
+  color: #aaa;
+}
 #top h3 img {
   width: 2.13333333rem;
   height: 1.42222222rem;
@@ -225,6 +243,9 @@ img {
   margin-top: 0.31111111rem;
   text-align: center;
   line-height: 0.57777778rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .movie_propaganda dd p:nth-of-type(2) {
   font-size: 0.66666667rem;
@@ -257,7 +278,6 @@ img {
 .moive_model {
   padding-top: 0.53333333rem;
   padding-bottom: 0.88888889rem;
-  overflow: hidden;
 }
 .moive_head h3 {
   float: left;
@@ -283,18 +303,34 @@ img {
 }
 .moive_show {
   padding-top: 0.75555556rem;
-  width: 53.33333333rem;
+  width: 39.64444444rem;
+}
+.moive_showOut {
+  overflow-y: hidden;
 }
 .moive_showImg {
   width: 4.44444444rem;
   height: 6.35555556rem;
-  background: url();
 }
 .moive_showText {
   font-size: 0.62222222rem;
   line-height: 0.62222222rem;
   margin-top: 0.37777778rem;
   text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 4.44444444rem;
+}
+.moive_showTextBottom {
+  font-size: 0.53333333rem;
+  line-height: 0.53333333rem;
+  margin-top: 0.31111111rem;
+  width: 4.44444444rem;
+  text-align: center;
+  display: block;
+  color: #aaa;
+  font-style: normal;
 }
 .moive_star span {
   display: block;
@@ -311,8 +347,8 @@ img {
   padding-left: 0.11111111rem;
   display: block;
   font-weight: normal;
-  font-size: 0.44444444rem;
-  line-height: 0.44444444rem;
+  font-size: 0.53333333rem;
+  line-height: 0.53333333rem;
   color: #949494;
 }
 .moive_findmoive {
@@ -416,8 +452,6 @@ img {
 .moive_detailedPoster {
   width: 4.44444444rem;
   height: 6.66666667rem;
-  background: url(../img/moive_1.png) no-repeat center;
-  background-size: 4.44444444rem 6.66666667rem;
   float: right;
 }
 .moive_detailedSynopsis {
@@ -472,9 +506,17 @@ img {
   color: #aaa;
 }
 .moive_detailedIntroP {
-  font-size: 0.62222222rem;
+  font-size: 0.66666667rem;
   line-height: 0.97777778rem;
   color: #494949;
+  height: 2.93333333rem;
+  overflow: hidden;
+}
+.moive_detailedIntroPH {
+  height: auto;
+}
+.hidden {
+  display: none;
 }
 .moive_detailedSectionTitle {
   font-size: 0.62222222rem;
@@ -505,7 +547,7 @@ img {
   color: #aaa;
 }
 .moive_detailedmaker {
-  overflow: hidden;
+  overflow: auto;
 }
 .moive_detailedmakerList {
   width: 44.44444444rem;
@@ -722,7 +764,7 @@ img {
   height: 5.33333333rem;
 }
 .move_filmmakerWorks {
-  overflow: auto;
+  overflow-y: hidden;
 }
 .move_filmmakerWorks ul li:first-of-type {
   margin-left: 0;
@@ -754,4 +796,91 @@ img {
 .move_discussTitle {
   font-size: 0.97777778rem;
   font-weight: normal;
+  line-height: 1.86666667rem;
+  margin-top: 1.11111111rem;
+}
+.personal_top {
+  width: 16rem;
+  height: 4.62222222rem;
+  background: #5c5c5c;
+  padding-top: 0.88888889rem;
+}
+.personal_top img {
+  float: left;
+  width: 3.28888889rem;
+  height: 3.28888889rem;
+  margin-left: 0.88888889rem;
+}
+.personal_message {
+  float: left;
+  width: 10.55555556rem;
+  margin-left: 0.57777778rem;
+}
+.personal_name {
+  float: left;
+  width: 7.11111111rem;
+}
+.personal_name span:nth-of-type(1) {
+  display: block;
+  font-size: 0.75555556rem;
+  line-height: 1.02222222rem;
+  height: 1.02222222rem;
+  color: #fff;
+}
+.personal_name span:nth-of-type(2) {
+  display: block;
+  font-size: 0.57777778rem;
+  line-height: 0.66666667rem;
+  height: 0.66666667rem;
+  color: #fff;
+}
+.personal_page {
+  float: right;
+  font-size: 0.57777778rem;
+  line-height: 0.66666667rem;
+  color: #fff;
+  margin-top: 1.02222222rem;
+}
+.personal_messageT {
+  padding-top: 0.26666667rem;
+  padding-bottom: 0.35555556rem;
+  border-bottom: 0.04444444rem solid #666666;
+}
+.personal_messageB {
+  font-size: 0.57777778rem;
+  line-height: 0.66666667rem;
+  padding-top: 0.66666667rem;
+  color: #ffffff;
+}
+.personal_messageB span:nth-of-type(1) {
+  margin-right: 1rem;
+}
+.personal_bottom {
+  margin-top: 0.88888889rem;
+  background: #fff;
+}
+.personal_bottomL {
+  float: left;
+  width: 25%;
+  padding-bottom: 0.8rem;
+  border-bottom: 0.04444444rem solid #f6f6f6;
+}
+.personal_bottomL img {
+  width: 1.42222222rem;
+  height: 1.42222222rem;
+  margin: 0 auto;
+  margin-top: 1.24444444rem;
+  margin-bottom: 0.31111111rem;
+}
+.personal_bottomL span {
+  display: block;
+  text-align: center;
+  color: #9b9b9b;
+  font-size: 0.53333333rem;
+  line-height: 0.66666667rem;
+}
+.personal_bg {
+  background: #f7f7f7;
+  height: 100%;
+  padding-bottom: 2.22222222rem;
 }

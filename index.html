@@ -4,19 +4,100 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="stylesheet" href="css/reglogcss.css"/>
 	</head>
 	<body>
+		<!-- 注册登录--------------------------------------------------------------->
+		<!-- <div class="registration">
+			<h3 class="registration_welcome">欢迎加入豆瓣</h3>
+			<input type="text" class="regloginput" placeholder="账号"/>
+			<input type="text" class="regloginput" placeholder="密码（最少六位）"/>
+			<input type="text" class="regloginput regloginputBorder" placeholder="昵称"/>
+			<input type="button" class="regloginputBtn" value="下一步">
+			<p class="reglogP">点击【下一步】代表你已经阅读并同意用户使用协议</p>
+			<p class="reglogPCb">返回</p>
+		</div> -->
+		<!-- <div class="login">
+			<h3 class="login_title">
+				<span class="login_cancel">取消</span>
+				<span>登录豆瓣</span>
+			</h3>
+		</div>
+		<div class="login_accounts">
+			<input type="text" class="login_input" placeholder="账号"/>
+			<input type="text" class="login_input" placeholder="密码"/>
+			<input type="button" class="login_inputBtn" value="登陆"/>
+			<P class="login_inputP">注册豆瓣账号</p>
+		</div> -->
+
+
+
+
+
+
+
 		<header id="top" class="clear">
 			<h3><img src="img/logo.png"/></h3>
 			<ul class="clear" id="nav">
 				<li>电影</li>
 				<li>图书</li>
 				<li>广播</li>
-				<li>小组</li>
 				<li id="hunt"><img src="img/ss.png"/></li>
 			</ul>
 		</header>
-		<div id="page">
+ 			<div id="page">
+<!--个人主页-->
+				<section class="personal_top clear">
+					<img src="img/heh.png"/>
+					<div class="personal_message">
+						<div class="clear personal_messageT">
+							<p class="personal_name">
+								<span>盖盖盖盖</span>
+								<span>ID:165938892</span>
+							</p>
+							<p class="personal_page">个人主页 ></p>
+						</div>
+						<p class="personal_messageB"><span>关注 0</span><span>被关注 0</span></p>
+					</div>
+				</section>
+				<ul class="personal_bottom clear">
+						<li class="personal_bottomL">
+							<img src="https://img3.doubanio.com/f/talion/091d828e06cc8fa88ad7be161becfea88e14cf1c/pics/card/favourite.png">
+							<span>喜欢</span>
+						</li>
+						<li class="personal_bottomL">
+							<img src="https://img3.doubanio.com/f/talion/15be66dc7121d728f11cbf4e3ac674a0a68331ca/pics/card/diary.png">
+							<span>日记</span>
+						</li>
+						<li class="personal_bottomL">
+							<img src="https://img3.doubanio.com/f/talion/1a4604b83e0d7e091c610fe662c9a50518188193/pics/card/album.png">
+							<span>相册</span>
+						</li>
+						<li class="personal_bottomL">
+							<img src="https://img3.doubanio.com/f/talion/a827877341968d09f309b70646f409d9fe39a2f9/pics/card/broadcast.png">
+							<span>我的广播</span>
+						</li>
+						<li class="personal_bottomL">
+							<img src="https://img3.doubanio.com/f/talion/7d8c1ccedee37780b29e790e311da66ac863cd7b/pics/card/movie.png">
+							<span>电影</span>
+						</li>
+						<li class="personal_bottomL">
+							<img src="https://img3.doubanio.com/f/talion/d0ffbee4f5ce5b59594dc53fad59c93cb3e8f646/pics/card/read.png">
+							<span>读书</span>
+						</li>
+						<li class="personal_bottomL">
+							<img src="https://img3.doubanio.com/f/talion/d91d24876aaf5a441a4677a893a8d86068fbf5b1/pics/card/music.png">
+							<span>音乐</span>
+						</li>
+						<li class="personal_bottomL">
+							<img src="https://img3.doubanio.com/f/talion/aaa90ee88850f7665f858011bd5ea3219fca0647/pics/card/dou list.png">
+							<span>我的豆列</span>
+						</li>
+						<li class="personal_bottomL">
+							<img src="https://img3.doubanio.com/f/talion/175762b338bf0d1b64ca2f33f18469d3db1160ba/pics/card/activity.png">
+							<span>同城活动</span>
+						</li>
+				</ul>
 <!-- 首页 ---------------------------------------------------------->
 			<!-- <div id="con">
 				<ul class="clear" id="nomic">
@@ -222,204 +303,162 @@
 					<h3>影院热映</h3>
 					<p>更多</p>
 				</header>
-				<ul class="moive_show clear">
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-				</ul>
+				<div class="moive_showOut">
+					<ul class="moive_show clear">
+						<li>
+							<img src="img/mo1.png" class="moive_showImg">
+							<p class="moive_showText">战狼2</p>
+							<p class="moive_star clear">
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="hstar"></span>
+								<b>7.5</b>
+							</p>
+						</li>
+					</ul>
+				</div>
 			</section>
 			<section class="moive_model">
 				<header class="moive_head clear">
 					<h3>影院热映</h3>
 					<p>更多</p>
 				</header>
-				<ul class="moive_show clear">
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-				</ul>
+				<div class="moive_showOut">
+					<ul class="moive_show clear">
+						<li>
+							<img src="img/mo1.png" class="moive_showImg">
+							<p class="moive_showText">战狼2</p>
+							<p class="moive_star clear">
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="hstar"></span>
+								<b>7.5</b>
+							</p>
+						</li>
+						<li>
+							<img src="img/mo1.png" class="moive_showImg">
+							<p class="moive_showText">战狼2</p>
+							<p class="moive_star clear">
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="hstar"></span>
+								<b>7.5</b>
+							</p>
+						</li>
+						<li>
+							<img src="img/mo1.png" class="moive_showImg">
+							<p class="moive_showText">战狼2</p>
+							<p class="moive_star clear">
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="hstar"></span>
+								<b>7.5</b>
+							</p>
+						</li>
+						<li>
+							<img src="img/mo1.png" class="moive_showImg">
+							<p class="moive_showText">战狼2</p>
+							<p class="moive_star clear">
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="hstar"></span>
+								<b>7.5</b>
+							</p>
+						</li>
+						<li>
+							<img src="img/mo1.png" class="moive_showImg">
+							<p class="moive_showText">战狼2</p>
+							<p class="moive_star clear">
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="hstar"></span>
+								<b>7.5</b>
+							</p>
+						</li>
+					</ul>
+				</div>
 			</section>
 			<section class="moive_model">
 				<header class="moive_head clear">
 					<h3>影院热映</h3>
 					<p>更多</p>
 				</header>
-				<ul class="moive_show clear">
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-					<li>
-						<img src="img/mo1.png" class="moive_showImg">
-						<p class="moive_showText">战狼2</p>
-						<p class="moive_star clear">
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="ystar"></span>
-							<span class="hstar"></span>
-							<b>7.5</b>
-						</p>
-					</li>
-				</ul>
+				<div class="moive_showOut">
+					<ul class="moive_show clear">
+						<li>
+							<img src="img/mo1.png" class="moive_showImg">
+							<p class="moive_showText">战狼2</p>
+							<p class="moive_star clear">
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="hstar"></span>
+								<b>7.5</b>
+							</p>
+						</li>
+						<li>
+							<img src="img/mo1.png" class="moive_showImg">
+							<p class="moive_showText">战狼2</p>
+							<p class="moive_star clear">
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="hstar"></span>
+								<b>7.5</b>
+							</p>
+						</li>
+						<li>
+							<img src="img/mo1.png" class="moive_showImg">
+							<p class="moive_showText">战狼2</p>
+							<p class="moive_star clear">
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="hstar"></span>
+								<b>7.5</b>
+							</p>
+						</li>
+						<li>
+							<img src="img/mo1.png" class="moive_showImg">
+							<p class="moive_showText">战狼2</p>
+							<p class="moive_star clear">
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="hstar"></span>
+								<b>7.5</b>
+							</p>
+						</li>
+						<li>
+							<img src="img/mo1.png" class="moive_showImg">
+							<p class="moive_showText">战狼2</p>
+							<p class="moive_star clear">
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="ystar"></span>
+								<span class="hstar"></span>
+								<b>7.5</b>
+							</p>
+						</li>
+					</ul>
+				</div>
 			</section>
 			<section class="moive_findmoive">
 				<header class="moive_head">
@@ -880,7 +919,7 @@
 			</div> -->
 
 <!-- 讨论页面 ---------------------------------------------------------->
-			<div class="move_margin">
+			<!-- <div class="move_margin">
 				<h4 class="move_discussTitle">全部短评(172457)</h4>
 				<ul class="moive_ShortEvaList">
 					<li>
@@ -948,7 +987,9 @@
 						</div>
 					</li>
 				</ul>
-			</div>
+			</div> -->
+
+<!-- -->
 		</div>
 	<script>
 		var pixelRatio = 1 / window.devicePixelRatio;

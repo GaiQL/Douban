@@ -45,6 +45,24 @@ img{
     top:0/@rem;
     left:0/@rem;
 }
+#account{
+  width:112/@rem;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align:center;
+}
+#account img{
+  width:50/@rem;
+  height:50/@rem;
+  margin-left:25/@rem;
+}
+#account span{
+  line-height:30/@rem;
+  font-size:25/@rem;
+  display:block;
+  color:#aaa;
+}
 #top h3 img{
     width:96/@rem;
     height:64/@rem;
@@ -215,6 +233,9 @@ img{
   margin-top:14/@rem;
   text-align:center;
   line-height:26/@rem;
+  white-space:nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .movie_propaganda dd p:nth-of-type(2){
   font-size:30/@rem;
@@ -247,7 +268,6 @@ img{
 .moive_model{
   padding-top:24/@rem;
   padding-bottom:40/@rem;
-  overflow:hidden;
 }
 .moive_head h3{
   float:left;
@@ -273,18 +293,34 @@ img{
 }
 .moive_show{
   padding-top:34/@rem;
-  width:2400/@rem;
+  width:1784/@rem;
+}
+.moive_showOut{
+  overflow-y:hidden;
 }
 .moive_showImg{
   width:200/@rem;
   height:286/@rem;
-  background:url()
 }
 .moive_showText{
   font-size:28/@rem;
   line-height:28/@rem;
   margin-top:17/@rem;
   text-align:center;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow:hidden;
+  width:200/@rem;
+}
+.moive_showTextBottom{
+  font-size:24/@rem;
+  line-height:24/@rem;
+  margin-top:14/@rem;
+  width:200/@rem;
+  text-align:center;
+  display:block;
+  color:#aaa;
+  font-style:normal;
 }
 .moive_star span{
   display:block;
@@ -301,8 +337,8 @@ img{
   padding-left:5/@rem;
   display:block;
   font-weight:normal;
-  font-size:20/@rem;
-  line-height:20/@rem;
+  font-size:24/@rem;
+  line-height:24/@rem;
   color:#949494;
 }
 .moive_findmoive{
@@ -406,8 +442,6 @@ img{
 .moive_detailedPoster{
   width:200/@rem;
   height:300/@rem;
-  background:url(../img/moive_1.png) no-repeat center;
-  background-size:200/@rem 300/@rem;
   float:right;
 }
 .moive_detailedSynopsis{
@@ -462,9 +496,17 @@ img{
   color:#aaa;
 }
 .moive_detailedIntroP{
-  font-size:28/@rem;
+  font-size:30/@rem;
   line-height:44/@rem;
   color:#494949;
+  height:132/@rem;
+  overflow: hidden;
+}
+.moive_detailedIntroPH{
+  height:auto;
+}
+.hidden{
+  display:none;
 }
 .moive_detailedSectionTitle{
   font-size:28/@rem;
@@ -495,7 +537,7 @@ img{
   color:#aaa;
 }
 .moive_detailedmaker{
-  overflow:hidden;
+  overflow:auto;
 }
 .moive_detailedmakerList{
   width:2000/@rem;
@@ -714,7 +756,7 @@ img{
   height:240/@rem;
 }
 .move_filmmakerWorks{
-  overflow:auto;
+  overflow-y:hidden;
 }
 .move_filmmakerWorks ul li:first-of-type{
   margin-left:0;
@@ -746,4 +788,92 @@ img{
 .move_discussTitle{
   font-size:44/@rem;
   font-weight:normal;
+  line-height:84/@rem;
+  margin-top:50/@rem;
+}
+.personal_top{
+  width:720/@rem;
+  height:208/@rem;
+  background:#5c5c5c;
+  padding-top:40/@rem;
+}
+.personal_top img{
+  float:left;
+  width:148/@rem;
+  height:148/@rem;
+  margin-left:40/@rem;
+}
+.personal_message{
+  float:left;
+  width:475/@rem;
+  margin-left:26/@rem;
+}
+.personal_name{
+  float:left;
+  width:320/@rem;
+}
+.personal_name span:nth-of-type(1){
+  display:block;
+  font-size:34/@rem;
+  line-height:46/@rem;
+  height:46/@rem;
+  color:#fff;
+}
+.personal_name span:nth-of-type(2){
+  display:block;
+  font-size:26/@rem;
+  line-height:30/@rem;
+  height:30/@rem;
+  color:#fff;
+}
+.personal_page{
+  float:right;
+  font-size:26/@rem;
+  line-height: 30/@rem;
+  color:#fff;
+  margin-top:46/@rem;
+}
+.personal_messageT{
+  padding-top:12/@rem;
+  padding-bottom:16/@rem;
+  border-bottom:2/@rem solid #666666;
+}
+.personal_messageB{
+  font-size:26/@rem;
+  line-height:30/@rem;
+  padding-top:30/@rem;
+  color:#fff
+}
+.personal_messageB span:nth-of-type(1){
+  margin-right:45/@rem;
+}
+.personal_bottom{
+  margin-top:40/@rem;
+  background:#fff;
+
+}
+.personal_bottomL{
+  float:left;
+  width:25%;
+  padding-bottom:36/@rem;
+  border-bottom:2/@rem solid #f6f6f6;
+}
+.personal_bottomL img{
+  width:64/@rem;
+  height:64/@rem;
+  margin:0 auto;
+  margin-top:56/@rem;
+  margin-bottom:14/@rem;
+}
+.personal_bottomL span{
+  display:block;
+  text-align:center;
+  color:#9b9b9b;
+  font-size:24/@rem;
+  line-height:30/@rem;
+}
+.personal_bg{
+  background:#f7f7f7;
+  height:100%;
+  padding-bottom:100/@rem;
 }
