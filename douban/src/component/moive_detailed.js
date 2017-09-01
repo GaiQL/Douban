@@ -178,6 +178,16 @@ class Moive_detailed extends Component{
               </ul>
             </div>
           </section>
+          <section className="model_footer">
+  					<dl className="model_footerlist clear">
+  						<dt><img src="https://img3.doubanio.com/f/talion/7837f29dd7deab9416274ae374a59bc17b5f33c6/pics/card/douban-app-logo.png"/></dt>
+  						<dd>
+  							<p>豆瓣</p>
+  							<p>我们的精神角落</p>
+  						</dd>
+  					</dl>
+  					<p className="model_footerAdd">免费下载 Android 客户端</p>
+  				</section>
         </div>
       </div>
     )

@@ -98,3 +98,235 @@
   line-height: 0.88888889rem;
   margin-top: 2.22222222rem;
 }
+.registrationT {
+  border-bottom: 0.04444444rem solid #e4e4e4;
+  text-align: center;
+  position: relative;
+}
+.registrationT span {
+  font-size: 0.65185185rem;
+  line-height: 2.13333333rem;
+  color: #000;
+}
+.registrationT p {
+  position: absolute;
+  right: 1.27407407rem;
+  font-size: 0.65185185rem;
+  line-height: 2.13333333rem;
+  top: 0rem;
+  color: #42bd56;
+}
+.registrationT_bookPadding {
+  padding-left: 0.91851852rem;
+  padding-right: 1.24444444rem;
+}
+.registrationT_bookFirst {
+  height: 3.46666667rem;
+  line-height: 3.46666667rem;
+  font-size: 0.59259259rem;
+  border-bottom: 0.01481481rem solid #e4e4e4;
+}
+.enter {
+  display: block;
+  float: right;
+  width: 0.2962963rem;
+  height: 0.2962963rem;
+  border-top: 0.05925926rem solid #cccccc;
+  border-right: 0.05925926rem solid #cccccc;
+  transform: rotate(45deg);
+  margin-top: 0.8rem;
+}
+.registrationT_bookFirst img {
+  width: 1.95555556rem;
+  height: 1.95555556rem;
+  float: right;
+  margin-top: 0.74074074rem;
+  margin-right: 0.81481481rem;
+}
+.registrationT_bookFirst p:nth-of-type(1) {
+  float: left;
+  color: #9b9b9b;
+}
+.registrationT_bookFirst p:nth-of-type(2) {
+  margin-top: 1.48148148rem;
+}
+.registrationT_bookFirstOne {
+  height: 2.13333333rem;
+  line-height: 2.13333333rem;
+  border-bottom: 0.01481481rem solid #e4e4e4;
+}
+.registrationT_bookFirstOne p:nth-of-type(1) {
+  color: #9b9b9b;
+  font-size: 0.59259259rem;
+  float: left;
+}
+.registrationT_bookFirstOne input {
+  float: left;
+  font-size: 0.59259259rem;
+  width: 11.11111111rem;
+  display: block;
+  height: 2.13333333rem;
+  line-height: 2.13333333rem;
+  padding: 0;
+  outline: none;
+  border: 0;
+  margin-left: 0.96296296rem;
+}
+.textarea {
+  float: left;
+  font-size: 0.59259259rem;
+  margin-top: 0.62222222rem;
+  width: 11.11111111rem;
+  display: block;
+  line-height: 0.88888889rem;
+  margin-left: 0.96296296rem;
+  outline: none;
+  margin-bottom: 0.62222222rem;
+}
+.heightAuot {
+  min-height: 4.26666667rem;
+  height: auto;
+}
+.registrationT_bookSex {
+  float: left;
+  font-size: 0.59259259rem;
+  line-height: 2.13333333rem;
+  margin-left: 0.96296296rem;
+  color: #000;
+}
+.registrationT_bookList li:nth-last-of-type(1) {
+  margin-top: 0.66666667rem;
+}
+.registrationT_bookList {
+  background: #f2f1ee;
+  padding-bottom: 4.44444444rem;
+}
+.registrationT_bookList li {
+  background: #fff;
+}
+.mask {
+  width: 18.96296296rem;
+  height: 22.22222222rem;
+  background: #000;
+  opacity: 0.5;
+  position: absolute;
+  left: 0rem;
+  top: 0rem;
+  display: none;
+}
+.sexBox {
+  position: absolute;
+  left: 1.12592593rem;
+  top: 9.24444444rem;
+  width: 13.77777778rem;
+  background: #fff;
+  padding: 0.41481481rem 0rem;
+  border-radius: 0.2962963rem;
+  display: none;
+}
+.sexBox li {
+  font-size: 0.68148148rem;
+  line-height: 2.1037037rem;
+  color: #000;
+  padding-left: 1.11111111rem;
+}
+.birthdayBox {
+  width: 8.71111111rem;
+  height: 12.07407407rem;
+  background: #fff;
+  position: absolute;
+  left: 2.71111111rem;
+  top: 6.35555556rem;
+  border-radius: 0.2962963rem;
+  padding: 0 0.93333333rem;
+  padding-top: 0.77037037rem;
+  display: none;
+}
+.birthdayBox_top {
+  font-size: 0.82962963rem;
+  color: #000;
+  line-height: 1.27407407rem;
+}
+.birthdayBoxList {
+  position: relative;
+  top: -2.66666667rem;
+  width: 2.84444444rem;
+  margin-right: 0.08888889rem;
+}
+.birthdayBox div ul:nth-last-of-type(1) {
+  margin: 0;
+}
+.birthdayBoxList li {
+  line-height: 2.66666667rem;
+  font-size: 0.71111111rem;
+  text-align: center;
+}
+.birthdayBox_blueH {
+  width: 2.84444444rem;
+  height: 0.08888889rem;
+  background: #69c6e7;
+  position: absolute;
+}
+.birthdayBox_changeday div:nth-last-of-type(6) {
+  top: 4.84444444rem;
+  left: 0.93333333rem;
+}
+.birthdayBox_changeday div:nth-last-of-type(5) {
+  top: 4.84444444rem;
+  left: 3.86666667rem;
+}
+.birthdayBox_changeday div:nth-last-of-type(4) {
+  top: 4.84444444rem;
+  left: 6.8rem;
+}
+.birthdayBox_changeday div:nth-last-of-type(3) {
+  top: 7.06666667rem;
+  left: 0.93333333rem;
+}
+.birthdayBox_changeday div:nth-last-of-type(2) {
+  top: 7.06666667rem;
+  left: 3.86666667rem;
+}
+.birthdayBox_changeday div:nth-last-of-type(1) {
+  top: 7.06666667rem;
+  left: 6.8rem;
+}
+.birthdayBox_chioce p {
+  float: right;
+  font-size: 0.59259259rem;
+  line-height: 1.03703704rem;
+  color: #009688;
+}
+.birthdayBox_chioce p:nth-of-type(1) {
+  margin-left: 0.44444444rem;
+}
+.birthdayBox_chioce p:nth-of-type(2) {
+  margin-left: 1.65925926rem;
+}
+.birthdayBox .birthdayBox_chioce {
+  position: absolute;
+  bottom: 0.88888889rem;
+  right: 0.94814815rem;
+}
+.birthdayBoxListOut {
+  position: absolute;
+  overflow: hidden;
+  top: 0rem;
+  left: 0rem;
+}
+.birthdayBox_changeday div:nth-of-type(1),
+.birthdayBox_changeday div:nth-of-type(2),
+.birthdayBox_changeday div:nth-of-type(3) {
+  top: 2.04444444rem;
+  height: 8rem;
+  overflow: hidden;
+}
+.birthdayBox_changeday div:nth-of-type(1) {
+  left: 0.93333333rem;
+}
+.birthdayBox_changeday div:nth-of-type(2) {
+  left: 3.86666667rem;
+}
+.birthdayBox_changeday div:nth-of-type(3) {
+  left: 6.8rem;
+}

@@ -19,11 +19,10 @@ class Login extends Component{
     }else{
       alert('用户名不存在');
     }
-    // if(this.props.data.user.filter(e=>e.account === this.refs.account.value).length){
-    //
-    // }else{
-    //   alert('此用户名不存在');
-    // }
+  }
+  componentDidMount(){
+    this.props.registrationHalfF();
+    this.props.registrationFinishF();
   }
   render(){
     console.log(this.props.data)

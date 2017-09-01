@@ -13,13 +13,34 @@ class Moviecon extends Component{
   componentDidMount(){
     let that = this;
     let jump = null;
+    let urlLs = '';
+    let dataLs = '';
     if(this.props.location.jump){
       jump = this.props.location.jump;
     }else{
       jump = window.location.pathname.split('/')[2];
     }
+    // function tohanzi(data)
+    // {
+    //     if(data == '') return '请输入十六进制unicode';
+    //     data = data.split('\u');
+    //     var str ='';
+    //     for(var i=0;i<data.length;i++)
+    //     {
+    //         str+=String.fromCharCode(parseInt(data[i],16).toString(10));
+    //     }
+    //     return str;
+    // }
+    // console.log(decodeURI(jump))
+    // console.log(/[\u4e00-\u9fa5]+/.test(decodeURI(jump)))
+
+    if(/[\u4e00-\u9fa5]+/.test(decodeURI(jump))){
+      urlLs = 'https://api.douban.com/v2/movie/search?q='+decodeURI(jump);
+    }else{
+      urlLs = 'https://api.douban.com/v2/movie/'+jump;
+    }
     $.ajax({
-      url:'https://api.douban.com/v2/movie/'+jump,
+      url:urlLs,
       data:{
         count:18,
         // start:30
@@ -53,11 +74,17 @@ class Moviecon extends Component{
         this.setState({
           onOff:false
         })
+        let urlLs = '';
         let that = this;
         let jump = window.location.pathname.split('/')[2];
+        if(/[\u4e00-\u9fa5]+/.test(decodeURI(jump))){
+          urlLs = 'https://api.douban.com/v2/movie/search?q='+decodeURI(jump);
+        }else{
+          urlLs = 'https://api.douban.com/v2/movie/'+jump;
+        }
         this.state.num++;
         $.ajax({
-          url:'https://api.douban.com/v2/movie/'+jump,
+          url:urlLs,
           data:{
             count:18*this.state.num,
             // start:30
@@ -84,7 +111,7 @@ class Moviecon extends Component{
       movie_propaganda = dataS.map((e,i)=>{
         let data = {
           key:i,
-          images:e.images.medium,
+          images:e.images.large,
           name:e.title,
           stars:e.rating.stars,
           average:e.rating.average,
@@ -95,7 +122,7 @@ class Moviecon extends Component{
     }
     return (
       <div id="page" ref="page">
-          <div id="moviecon" onTouchMove={this.touch} ref="moviecon">
+          <div id="moviecon" onTouchMove={this.touch} ref="moviecon" onWheel={this.touch}>
   					<h3>{this.props.location.state}</h3>
   					<div className="clear">
   							{movie_propaganda}
@@ -107,6 +134,25 @@ class Moviecon extends Component{
 }
 class Movie_propaganda extends Component{
   render(){
+    let arr = [];
+    let str = '';
+    let star = Number(this.props.stars.substring(0,1));
+    if(star){
+      for(var j=0;j<5;j++){
+        if(j<star){
+          arr.push(<span className="ystar" key={j}></span>);
+        }else{
+          arr.push(<span className="hstar" key={j}></span>);
+        }
+      }
+    }else{
+      arr.push(<i key={0} className="moive_showTextBottom" style={{display:'inline'}}>暂无评分</i>)
+    }
+    if(this.props.average == '0'){
+      str = '';
+    }else{
+      str = this.props.average;
+    }
     return (
       <Link to={{pathname:"/Moive_detailed/"+this.props.id,state:this.props.id}}>
         <dl className="movie_propaganda">
@@ -114,12 +160,8 @@ class Movie_propaganda extends Component{
           <dd>
             <p>{this.props.name}</p>
             <p className="star clear">
-              <span className="ystar"></span>
-              <span className="ystar"></span>
-              <span className="ystar"></span>
-              <span className="ystar"></span>
-              <span className="hstar"></span>
-              <b>{this.props.average}</b>
+              {arr};
+              <b>{str}</b>
             </p>
           </dd>
         </dl>

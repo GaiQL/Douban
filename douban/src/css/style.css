@@ -259,6 +259,7 @@ img {
 .star {
   padding-top: 0.33333333rem;
   padding-left: 0.26666667rem;
+  text-align: center;
 }
 .ystar {
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAvVJREFUSA21lj1oFFEQx2d2jwTydXsRQUEw2BhiIcGgxkSwUbw7gkhCxCpJIXaCjWUKLQWxshbLgPEzZ2NhREGChSjY2BgMoiC3l3gazceO/3fHbi7Z9+7uncnC8ubNm5nf7Oy8t8vU4CXPUg+J+CCt5Y/wEP22DePYOih7edx5CNBzELvJ9UYaidEQmBIyHsGYJyLZQmAL25KpTJFLbZ0LxLSn7CtCf+QAny98toll/8QtqbMbUIVipiZn3AaqbO3BDschjowJMrCBW4FlqqMTrTUUB3AXPfVOxfVmjRWYWt2LqGyzNpxr12R2YNaUOcxCeFgeUXs4rTXWDS7tXaY+Y0CmFmpKjhrXtyywPOk4So7TjzbzKHCSaBEPd5IkHMWDT1lPnNjiv3kqsoJX8QO+i1hYwl0e1dwJNmSRVyy5VB7Gqc0RdngmMo9Sy+0dxujCzzqcKVyngC4hgTWdxfbrgls0509Emx4lT6PkUwC1bT8MEUXW0TtXOO3fUfEjsJpIzusldmYg7lXzbbyKiH4B0FwYcxNYKWXG2w94Din1hEb/OX6lIMhytvCuMk5sH8Ngnv4GAyjNbKVhQ7LIe5LlY1uhKlYMrJT4xBWo6J/B86t33uAlL2jVH+TM8oIugBasDHmUVtDtL3VOdemEPuEf5afJ1gguOTANmhxr6plPVrOpDiZuHIz/Mcm17TbBjWB54HWhs/eZHOvSc8KYuBFMTVS1VHWBA8cYwwzmGmVG8wD+vGoCbE7eDCZDc6ijj+QmFfOHOZ0/jcNhAnve1ycgvdiQ2iNYC5bp9l3E0h0LVjoQguM4+q5huy2rdRwOd0lW1Ck3HbNndqk12R/TQ6EFU7OLpsBva3ipD7wEk/TF7+Ps4ttQHY6c/fUNTz9MwfoIfgK+h/rSyK72PevBDg9EzkJviFZ78fm8wZdpNdJrBCR1n4prPSj9vYrlExVyJOrBgXxA5gt4yqs0lx/gTPFj5FFD4NGlPGf8MZx6acRQfq91Lv8AZLTfj0RLVbcAAAAASUVORK5CYII=') no-repeat center;
@@ -356,19 +357,21 @@ img {
   overflow: hidden;
 }
 .moive_findmoiveList {
-  width: 40rem;
-  padding-top: 0.71111111rem;
-  padding-left: 0.62222222rem;
+  padding: 0.71111111rem 0.62222222rem 0rem 0.62222222rem;
+  display: flex;
 }
 .moive_findmoiveList li {
   line-height: 2.22222222rem;
+  height: 2.22222222rem;
   font-size: 0.62222222rem;
   border: 0.04444444rem solid #87ceeb;
   margin-left: 0.35555556rem;
-  margin-bottom: 0.35555556rem;
   border-radius: 0.11111111rem;
   float: left;
   padding: 0rem 1.17777778rem;
+}
+.moive_findmoiveList a {
+  flex: none;
 }
 .moive_classify {
   padding-top: 1.17777778rem;
@@ -883,4 +886,132 @@ img {
   background: #f7f7f7;
   height: 100%;
   padding-bottom: 2.22222222rem;
+}
+.movie_listPad {
+  padding: 0 0.8rem;
+}
+.movie_listTOP p:nth-of-type(1) {
+  font-size: 1.02222222rem;
+  line-height: 1.42222222rem;
+  color: #000;
+  text-align: center;
+  margin-top: 1.33333333rem;
+}
+.movie_listTOP p:nth-of-type(2) {
+  font-size: 0.66666667rem;
+  line-height: 1.33333333rem;
+  margin-top: 0.53333333rem;
+  color: #000;
+  text-align: center;
+}
+.movie_listTOP p:nth-of-type(3) {
+  font-size: 0.53333333rem;
+  line-height: 0.75555556rem;
+  margin-top: 0.44444444rem;
+  color: #000;
+  text-align: center;
+}
+.movie_listTOP * {
+  max-height: 222.22222222rem;
+}
+.movie_listLove {
+  text-align: center;
+  margin-top: 0.88888889rem;
+  padding-bottom: 1.11111111rem;
+  border-bottom: 0.04444444rem solid #aaaaaa;
+}
+.movie_listLove span {
+  font-size: 0.53333333rem;
+  line-height: 1.33333333rem;
+  color: #42bd56;
+  padding: 0.44444444rem 0.8rem 0.44444444rem 1.82222222rem;
+  background: url(../img/lbegin.png) no-repeat 0.8rem 0.4rem;
+  background-size: 0.66666667rem 0.66666667rem;
+  border-radius: 0.22222222rem;
+  border: 0.04444444rem solid #42bd56;
+}
+.movie_listParticularsTop img {
+  width: 3.33333333rem;
+  height: 4.93333333rem;
+  float: left;
+  margin-right: 0.66666667rem;
+}
+.movie_listParticularsParagraph {
+  float: left;
+}
+.movie_listParticularsParagraph p:nth-of-type(1) {
+  font-size: 0.71111111rem;
+  line-height: 1.02222222rem;
+}
+.movie_listParticularsParagraph p:nth-of-type(3) {
+  font-size: 0.48888889rem;
+  line-height: 0.8rem;
+  color: #aaaaaa;
+  margin-top: 0.31111111rem;
+}
+.movie_listParticularsL {
+  padding: 0.84444444rem 0rem;
+  border-bottom: 0.04444444rem solid #aaaaaa;
+}
+.movie_listStar span {
+  width: 0.57777778rem;
+  height: 0.57777778rem;
+  background-size: 0.57777778rem 0.57777778rem;
+}
+.movie_listStar b {
+  font-size: 0.57777778rem;
+  line-height: 0.57777778rem;
+}
+.movie_listParticularsBottom {
+  font-size: 0.48888889rem;
+  line-height: 0.84444444rem;
+  color: #000;
+  margin-top: 0.53333333rem;
+  margin-left: 0.26666667rem;
+  padding-left: 0.35555556rem;
+  border-left: 0.08888889rem solid #e6e6e6;
+  max-height: 22.22222222rem;
+}
+.movie_listPage p {
+  font-size: 0.71111111rem;
+  text-align: center;
+  margin-top: 1.33333333rem;
+}
+.movie_listPageUD {
+  margin-top: 1.02222222rem;
+}
+.movie_listPageUD div {
+  float: left;
+  width: 7rem;
+  line-height: 1.24444444rem;
+  border: 0.04444444rem solid #cbcbcb;
+  border-radius: 0.22222222rem;
+  text-align: center;
+  font-size: 0.71111111rem;
+  background-color: #f2f2f2;
+}
+.movie_listPageUDC {
+  color: #cdcdcd;
+}
+.movie_listPageUD div:nth-of-type(2) {
+  float: right;
+}
+.moive_findmoiveListOut {
+  overflow-x: scroll;
+}
+.moive_findmoiveList a:nth-of-type(2) li {
+  border-color: #42bd56;
+  color: #42bd56;
+}
+.moive_findmoiveList a:nth-of-type(3) li {
+  border-color: #FFC46C;
+  color: #FFC46C;
+}
+.moive_findmoiveList a:nth-of-type(4) li {
+  border-color: #FF4055;
+  color: #FF4055;
+}
+.moive_findmoiveList a:nth-of-type(5) li {
+  border-color: skyblue;
+  color: skyblue;
 }

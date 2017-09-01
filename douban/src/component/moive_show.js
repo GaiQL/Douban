@@ -69,7 +69,7 @@ class Moive_show extends Component{
                 state:e.id
               }
             }>
-            <img src={e.images.medium} className="moive_showImg" />
+            <img src={e.images.large} className="moive_showImg" />
             <p className="moive_showText">{e.original_title}</p>
             <p className={(arr.length>1)?'moive_star clear':''}>
               {arr}
