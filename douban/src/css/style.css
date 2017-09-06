@@ -74,8 +74,9 @@ img {
   color: #aaa;
 }
 #top h3 img {
-  width: 2.13333333rem;
-  height: 1.42222222rem;
+  width: 3rem;
+  height: 1.11111111rem;
+  margin-top: 0.22222222rem;
 }
 #top h3 {
   float: left;
@@ -102,10 +103,10 @@ img {
 #nav li:nth-of-type(4) {
   color: #2AB8CC;
 }
-#hunt {
+.hunt {
   margin-top: 0.35555556rem;
 }
-#hunt img {
+.hunt img {
   width: 1.2rem;
   height: 1.06666667rem;
 }
@@ -490,7 +491,29 @@ img {
   color: #e6ba33;
   border: 0.04444444rem solid #ffb113;
   border-radius: 0.13333333rem;
-  padding: 0rem 2.8rem;
+  width: 6.88888889rem;
+  text-align: center;
+}
+.moive_detailedWBottom {
+  font-size: 0.62222222rem;
+  line-height: 1.33333333rem;
+  color: #aaa;
+}
+.moive_detailedWBottomDe {
+  color: #42bd56;
+  margin-left: 0.66666667rem;
+}
+.moive_detailedW .aaa {
+  border-color: #aaa;
+  color: #aaa;
+}
+.moive_detailedW a:nth-of-type(1) {
+  float: left;
+  display: block;
+}
+.moive_detailedW a:nth-of-type(2) {
+  float: right;
+  display: block;
 }
 .moive_detailedW {
   padding-top: 1.24444444rem;
@@ -720,8 +743,8 @@ img {
 .move_filmmakerIntroduceLeft p:nth-of-type(1) {
   font-size: 0.62222222rem;
   line-height: 1.11111111rem;
-  margin-bottom: 0.57777778rem;
-  color: #aaa;
+  margin-top: 0.88888889rem;
+  color: #000;
 }
 .move_filmmakerIntroduceLeft p:nth-of-type(2) {
   font-size: 0.57777778rem;
@@ -742,6 +765,10 @@ img {
   color: #ffb712;
   margin-top: 1.73333333rem;
   margin-bottom: 0.71111111rem;
+}
+.move_filmmakerCollectActive {
+  border-color: #aaa;
+  color: #aaa;
 }
 .move_filmmakerBTitle {
   font-size: 0.62222222rem;
@@ -890,6 +917,10 @@ img {
 .movie_listPad {
   padding: 0 0.8rem;
 }
+.movie_listParticularsListPad {
+  padding: 0.84444444rem 0.8rem;
+  border-bottom: 0.02222222rem solid #aaaaaa;
+}
 .movie_listTOP p:nth-of-type(1) {
   font-size: 1.02222222rem;
   line-height: 1.42222222rem;
@@ -930,6 +961,10 @@ img {
   border-radius: 0.22222222rem;
   border: 0.04444444rem solid #42bd56;
 }
+.movie_listLove .movie_listRedLove {
+  background: url(https://img3.doubanio.com/f/talion/22c02fa5adbc12a91da713d4be30c9462871c13d/pics/card/ic_liked@2x.png) no-repeat 0.8rem 0.4rem;
+  background-size: 0.66666667rem 0.66666667rem;
+}
 .movie_listParticularsTop img {
   width: 3.33333333rem;
   height: 4.93333333rem;
@@ -938,6 +973,7 @@ img {
 }
 .movie_listParticularsParagraph {
   float: left;
+  width: 10.11111111rem;
 }
 .movie_listParticularsParagraph p:nth-of-type(1) {
   font-size: 0.71111111rem;
@@ -1014,4 +1050,19 @@ img {
 .moive_findmoiveList a:nth-of-type(5) li {
   border-color: skyblue;
   color: skyblue;
+}
+.personal_movieTop .personal_movieCollect {
+  width: 100%;
+}
+.personal_movieCollectImg {
+  width: 3.33333333rem;
+  height: 3.33333333rem;
+  float: left;
+  margin-right: 0.66666667rem;
+}
+.personal_movieCollectImg img {
+  float: left;
+  width: 48%;
+  height: 48%;
+  margin: 1%;
 }

@@ -125,6 +125,16 @@
   line-height: 3.46666667rem;
   font-size: 0.59259259rem;
   border-bottom: 0.01481481rem solid #e4e4e4;
+  position: relative;
+}
+#input-file {
+  width: 16rem;
+  height: 3.46666667rem;
+  opacity: 0;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .enter {
   display: block;
@@ -186,6 +196,8 @@
 .heightAuot {
   min-height: 4.26666667rem;
   height: auto;
+  background: #fff;
+  margin-top: 0.74074074rem;
 }
 .registrationT_bookSex {
   float: left;
@@ -329,4 +341,20 @@
 }
 .birthdayBox_changeday div:nth-of-type(3) {
   left: 6.8rem;
+}
+.personal_movieTop div {
+  float: left;
+  width: 50%;
+  line-height: 1.97037037rem;
+  height: 1.97037037rem;
+  color: #aaaaaa;
+  font-size: 0.62222222rem;
+  text-align: center;
+  border-bottom: 0.08888889rem solid #ffffff;
+}
+.personal_movieTop {
+  border-top: 0.04444444rem solid #f3f3f3;
+}
+.personal_movieTop .personal_movieTopActive {
+  border-color: #42bd56;
 }

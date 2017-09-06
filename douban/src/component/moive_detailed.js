@@ -71,7 +71,6 @@ class Moive_detailed extends Component{
   }
   render(){
     let {data} = this.state
-    console.log(data)
     let images = null;
     let summary = null;
     let directorL = null;
@@ -161,10 +160,7 @@ class Moive_detailed extends Component{
             </div>
             <img className="moive_detailedPoster" src={images}/>
           </section>
-          <section className="moive_detailedW clear">
-            <p>想看</p>
-            <p>看过</p>
-          </section>
+          <LoginJump {...this.props} Personal_movie={this.state.data}/>
           <section className="moive_detailedIntro">
             <h3 className="moive_detailedSectionTitle">{data.title}的剧情简介</h3>
             <p className={this.state.unfold?'moive_detailedIntroP moive_detailedIntroPH':'moive_detailedIntroP'}>{summary}<span className={this.state.unfold?'hidden':''}>...</span><span style={{color:'#42bd56'}} onClick={this.click} className={this.state.unfold?'hidden':''}>(展开)</span></p>
@@ -193,4 +189,68 @@ class Moive_detailed extends Component{
     )
   }
 }
+class LoginJump extends Component{
+  want = () => {
+    this.props.personal_movieWant(this.props.Personal_movie,this.props.data.userNow.id);
+  }
+  look = () => {
+    this.props.personal_movieLook(this.props.Personal_movie,this.props.data.userNow.id);
+  }
+  render(){
+    let strW = '想看';
+    let strL = '看过';
+    let strDe = null;
+    let {data,Personal_movie} = this.props;
+    let Personal_movieWantIdArr = [];
+    let Personal_movieLookIdArr = [];
+    if(data.userNow){
+      data.userNow.Personal_movieWant.forEach((e,i)=>{
+        Personal_movieWantIdArr.push(e.id);
+        if(e.id === Personal_movie.id){
+          strW='以保存至想看';
+          strDe = <Moive_detailedWBottomDe text={'我想看这部电影'} {...this.props}/>;
+        }
+      })
+      data.userNow.Personal_movieLook.forEach((e,i)=>{
+        Personal_movieLookIdArr.push(e.id);
+        if(e.id === Personal_movie.id){
+          strL='以保存至看过';
+          strDe = <Moive_detailedWBottomDe text={'这部电影我看过'} {...this.props}/>;
+        }
+      })
+    }
+    if(this.props.data.landfallBol){
+      return (
+        <div>
+          <section className="moive_detailedW clear">
+            <p onClick={this.want} className={Personal_movieWantIdArr.includes(Personal_movie.id)?'aaa':''}>{strW}</p>
+            <p onClick={this.look} className={Personal_movieLookIdArr.includes(Personal_movie.id)?'aaa':''}>{strL}</p>
+          </section>
+          {strDe}
+        </div>
+      )
+    }else{
+      return (
+        <section className="moive_detailedW clear">
+          <Link to="/personal"><p>想看</p></Link>
+          <Link to="/personal"><p>看过</p></Link>
+        </section>
+      )
+    }
+  }
+}
+class Moive_detailedWBottomDe extends Component{
+  delete = () => {
+    this.props.personal_movieDelete(this.props.Personal_movie);
+  }
+  render(){
+    return (
+      <p className="moive_detailedWBottom">{this.props.text}<span className="moive_detailedWBottomDe" onClick={this.delete}>(删除)</span></p>
+    )
+  }
+}
 export default Moive_detailed
+//当前电影页面的数据
+//当前登录的用户
+//将当前的电影数据放到当前用户的想看或看过数组下
+//用当前用户的数据去渲染两个组件

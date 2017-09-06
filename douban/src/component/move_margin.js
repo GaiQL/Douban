@@ -66,7 +66,6 @@ class Move_margin extends Component{
   componentDidMount(){
     let that = this;
     let jump = null;
-    console.log(1);
     if(this.props.location.jump){
       jump = this.props.location.jump;
     }else{
@@ -85,21 +84,6 @@ class Move_margin extends Component{
       }
     })
   }
-  // change = (jump) => {
-  //   // let that = this;
-  //   // $.ajax({
-  //   //   url:'https://api.douban.com/v2/movie/celebrity/'+jump,
-  //   //   data:{
-  //   //     count:8
-  //   //   },
-  //   //   dataType:'jsonp',
-  //   //   success:function(data){
-  //   //     that.setState({
-  //   //       data:data
-  //   //     });
-  //   //   }
-  //   // })
-  // }
   render(){
     let {data} = this.state;
     // let {photos} = this.state;
@@ -110,7 +94,6 @@ class Move_margin extends Component{
     let move_filmmakerCooperationLW = null;
     let n = 0;
     let arrId = [];
-    console.log(data)
     arrId.push(data.id);
     if(data.avatars){
       images = data.avatars.medium;
@@ -147,7 +130,6 @@ class Move_margin extends Component{
   				<h3 className="move_filmmakerTitle">{data.name} - {data.name_en}</h3>
   				<section className="move_filmmakerIntroduce clear">
   					<div className="move_filmmakerIntroduceLeft">
-  						<p>3651人收藏</p>
   						<p>
   			        性别: {data.gender}
   							星座: 白羊座
@@ -155,11 +137,10 @@ class Move_margin extends Component{
   							出生地: {data.born_place}
   							更多中文名:
   			      </p>
-  						<p>更多资料</p>
   					</div>
   					<img src={images}/>
   				</section>
-  				<section className="move_filmmakerCollect">收藏</section>
+  				    <Movie_movieStar moviestar={this.state.data} {...this.props}/>
   				<section className="move_filmmakerIndividual">
   					<h4 className="move_filmmakerBTitle">个人作品</h4>
   					<div className="move_filmmakerWorks">
@@ -189,6 +170,61 @@ class Move_margin extends Component{
   			</div>
       </div>
     )
+  }
+}
+class Movie_movieStar extends Component{
+  constructor(){
+    super();
+    this.state = {
+      onOff:false,
+      str:'收藏'
+    }
+  }
+  componentDidMount(){
+    console.log(this.props.match.url.split('/')[2])
+    let jump = null;
+    let {data,moviestar} = this.props;
+    if(this.props.match.url){
+      jump = this.props.match.url.split('/')[2];
+    }
+    if(data.landfallBol){
+      data.userNow.Personal_moviestar.forEach((e,i)=>{
+        if(jump === e.id){
+          this.setState({
+            onOff:true,
+            str:'已收藏'
+          })
+        }
+      })
+    }
+  }
+  moviestar = () => {
+    this.setState({
+      onOff:!this.state.onOff
+    },()=>{
+      this.props.personal_moviestar(this.props.moviestar,this.state.onOff);
+    })
+    if(this.state.onOff){
+      this.setState({
+        str:'收藏'
+      })
+    }else{
+      this.setState({
+        str:'已收藏'
+      })
+    }
+  }
+  render(){
+    let {str} = this.state;
+    if(this.props.data.landfallBol){
+      return(
+        <section className={this.state.onOff?'move_filmmakerCollect move_filmmakerCollectActive':'move_filmmakerCollect'} onClick={this.moviestar}>{str}</section>
+      )
+    }else{
+      return (
+        <Link to='/personal'><section className="move_filmmakerCollect">{str}</section></Link>
+      )
+    }
   }
 }
 export default Move_margin

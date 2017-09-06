@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
-import {Link} from 'react-router-dom';
+import {Link,Route} from 'react-router-dom';
 class Movie_listParticularsL extends Component{
   render(){
     let {inner} = this.props;
@@ -67,10 +67,12 @@ class Movie_list extends Component{
     }
     if(decodeURI(jump) == 'top250'){
       id = 0;
-    }else if(decodeURI(jump) == '不正常'){
+    }else if(decodeURI(jump) == '悬疑罪案'){
       id = 1;
-    }else if(decodeURI(jump) == '悬疑惊悚'){
+    }else if(decodeURI(jump) == '美国'){
       id = 2;
+    }else if(decodeURI(jump) == '女孩'){
+      id = 3;
     }
     $.ajax({
       url:'https://api.douban.com/v2/movie/search?q='+decodeURI(jump),
@@ -88,8 +90,47 @@ class Movie_list extends Component{
       onOff:true
     })
   }
-  // next = () => {
-  //   console.log(this.state.num)
+  next = () => {
+    console.log(this.props.match)
+    let that = this;
+    let jump = null;
+    let id = 0;
+    let num = window.location.pathname.split('/')[3];
+    console.log(this.props.match)
+    if(this.props.location.jump){
+      jump = this.props.location.jump;
+    }else{
+      jump = window.location.pathname.split('/')[2];
+    }
+    if(decodeURI(jump) == 'top250'){
+      id = 0;
+    }else if(decodeURI(jump) == '悬疑罪案'){
+      id = 1;
+    }else if(decodeURI(jump) == '美国'){
+      id = 2;
+    }else if(decodeURI(jump) == '女孩'){
+      id = 3;
+    }
+    $.ajax({
+      url:'https://api.douban.com/v2/movie/search?tag='+decodeURI(jump),
+      data:{
+        count:10,
+        start:num*10
+      },
+      dataType:'jsonp',
+      success:function(data){
+        that.props.movielist(data,id);
+      }
+    })
+    this.setState({
+      num:++this.state.num
+    })
+  }
+  //每一次路由跳转后，URL改变，     组件没有改变，路由改变，通过路由的改变刷新数据
+                                //回退的时候有URL值，可以回退到前一次的数据页面
+  //获取不同的数据，
+  // componentWillReceiveProps(){
+  //   console.log(this.props.match);
   //   let that = this;
   //   let jump = null;
   //   let id = 0;
@@ -106,36 +147,33 @@ class Movie_list extends Component{
   //     id = 2;
   //   }
   //   $.ajax({
-  //     url:'https://api.douban.com/v2/movie/search?tag='+decodeURI(jump),
+  //     url:'https://api.douban.com/v2/movie/search?q='+decodeURI(jump),
   //     data:{
   //       count:10,
-  //       start:that.state.num*10
+  //       start:0
   //     },
   //     dataType:'jsonp',
   //     success:function(data){
   //       that.props.movielist(data,id);
   //     }
   //   })
-  //   this.setState({
-  //     num:++this.state.num
-  //   })
-  //
   // }
   render(){
-    console.log(this.state.num)
     let id = 1;
     let jump = null;
-    if(this.props.location.jump){
+    if(this.props.location){
       jump = this.props.location.jump;
     }else{
       jump = window.location.pathname.split('/')[2];
     }
     if(decodeURI(jump) == 'top250'){
       id = 0;
-    }else if(decodeURI(jump) == '不正常'){
+    }else if(decodeURI(jump) == '悬疑罪案'){
       id = 1;
-    }else if(decodeURI(jump) == '悬疑惊悚'){
+    }else if(decodeURI(jump) == '美国'){
       id = 2;
+    }else if(decodeURI(jump) == '女孩'){
+      id = 3;
     }
     let {movie_list} = this.props.data;
     let movielist = null;
@@ -155,7 +193,7 @@ class Movie_list extends Component{
     }else{
       listProfile = movie_list.listProfileShort;
     }
-    console.log(this.state.num);
+    console.log(movie_list)
     return (
       <div id="page">
       <div className="movie_listPad">
@@ -164,7 +202,7 @@ class Movie_list extends Component{
           <p>{movie_list.listAuthor}</p>
           <p>{listProfile}<br></br><span style={{color:"#42BD56"}} onClick={this.unfurled} className={this.state.onOff?'hidden':''}>(展开)</span></p>
         </section>
-        <section className="movie_listLove"><span>{movie_list.loveNum}</span></section>
+        <Movie_listLove movie_list={movie_list}{...this.props}/>
         <section className="movie_listParticulars">
           {movielist}
         </section>
@@ -172,13 +210,7 @@ class Movie_list extends Component{
           <p>· {this.state.num} ·</p>
           <div className="movie_listPageUD clear">
             <div className="movie_listPageUDC">上页</div>
-            <Link to={
-              {
-                pathname:"/movie_list/"+this.props.search,
-                jump:this.props.search,
-                id:this.props.id
-              }
-            }><div>下页</div></Link>
+            <Link to={this.props.match.url+'/'+(this.state.num+1)} onClick={this.next}><div>下页</div></Link>
           </div>
         </section>
         <section className="model_footer">
@@ -194,6 +226,61 @@ class Movie_list extends Component{
       </div>
       </div>
     )
+  }
+}
+class Movie_listLove extends Component{
+  constructor(){
+    super();
+    this.state={
+      onOff:false
+    }
+  }
+  collect = () => {
+    let id = 1;
+    let jump = null;
+    let {movie_list} = this.props.data;
+    if(this.props.location.jump){
+      jump = this.props.location.jump;
+    }else{
+      jump = window.location.pathname.split('/')[2];
+    }
+    if(decodeURI(jump) == 'top250'){
+      id = 0;
+    }else if(decodeURI(jump) == '悬疑罪案'){
+      id = 1;
+    }else if(decodeURI(jump) == '美国'){
+      id = 2;
+    }else if(decodeURI(jump) == '女孩'){
+      id = 3;
+    }
+    this.setState({
+      onOff:!this.state.onOff
+    },()=>{
+      this.props.personal_collect(movie_list[id],this.state.onOff);
+    })
+  }
+  componentDidMount(){
+    let {data,movie_list} = this.props;
+    if(data.landfallBol){
+      data.userNow.Personal_collect.forEach((e,i)=>{
+        if(movie_list.listId === e.listId){
+          this.setState({
+            onOff:true
+          })
+        }
+      })
+    }
+  }
+  render(){
+    if(this.props.data.landfallBol){
+      return (
+        <section className="movie_listLove"><span onClick={this.collect} className={this.state.onOff?'movie_listRedLove':''}>{this.props.movie_list.loveNum}</span></section>
+      )
+    }else{
+      return (
+        <section className="movie_listLove"><Link to='/personal'><span>{this.props.movie_list.loveNum}</span></Link></section>
+      )
+    }
   }
 }
 export default Movie_list;

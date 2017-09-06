@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
+import {Link} from 'react-router-dom'
 class BirthdayBoxLi extends Component{
   componentWillMount(){
     console.log(this.props)
@@ -18,7 +19,12 @@ class RegistrationT extends Component{
     }
   }
   save = () => {
-    this.props.registrationFinishT();
+    if(!(/^\s{0,}\S{1,}$/.test(this.refs.inputname.value))){
+      alert('昵称不能为空');
+      return;
+    }
+    console.log(1);
+    this.props.registrationFinishT(this.refs.inputname.value,this.refs.contentEditable.innerHTML,this.refs.sexShow.innerHTML);
   }
   sex = () => {
     this.refs.mask.style.display = 'block';
@@ -40,6 +46,7 @@ class RegistrationT extends Component{
   move = (ev) => {
     var _x=ev.touches[0].pageX;
     var _y=ev.touches[0].pageY;
+
     var _tit = this.props.data.touchStart-_y;
     var liH = this.props.data.liH;
     var ulT = this.refs.birthdayBoxListOutSec.offsetTop;
@@ -55,7 +62,6 @@ class RegistrationT extends Component{
               console.log(1);
             })
       }
-
     }
     let touchNowSty = this.props.data.touchNowSty
     this.refs.birthdayBoxListOutSec.style.top = this.props.data.touchNowSty - _tit + 'px';
@@ -65,7 +71,6 @@ ulT = this.refs.birthdayBoxListOutSec.offsetTop;
       this.setState({
         onOff:true,
       })
-      console.log(this.state.onOff)
     }
   }
   start = (ev) => {
@@ -74,8 +79,26 @@ ulT = this.refs.birthdayBoxListOutSec.offsetTop;
     var liH = parseInt(getComputedStyle(this.refs.birthdayBoxListOutSec).height)/5
     this.props.touchStart(_y,nowSty,liH);
   }
-  end = (ev) => {
-    
+  componentDidMount(){
+    let {data} = this.props
+    let {inputname,contentEditable,sexShow} = this.refs;
+    if(data.landfallBol){
+      inputname.value = data.userNow.userName;
+      contentEditable.innerHTML = data.userNow.profile;
+      sexShow.innerHTML = data.userNow.sex;
+    }
+  }
+  imgChange = () => {
+    let {headImage,file} = this.refs;
+    var oFReader = new FileReader();
+    let _that = this;
+    var fileSe = file.files[0];
+        oFReader.readAsDataURL(fileSe);
+        oFReader.onloadend = function(oFRevent){
+            var src = oFRevent.target.result;
+            _that.props.headImageChange(src);
+            headImage.src = src;
+        }
   }
   render(){
     let {birthdayYear} = this.props.data
@@ -86,39 +109,40 @@ ulT = this.refs.birthdayBoxListOutSec.offsetTop;
       }
       return  <BirthdayBoxLi {...data}/>
     });
+    let save = null;
+    let headImage = null;
+    console.log(this.props.data)
+    if(this.props.data.landfallBol){
+      save = <Link to="/personal"><p onClick={this.save}>保存</p></Link>
+      headImage = this.props.data.userNow.headImage
+    }else{
+      save = <p onClick={this.save}>保存</p>
+      headImage = require("./img/heh.png")
+    }
     return (
       <div>
         <header className="registrationT">
           <span>个人资料</span>
-          <p onClick={this.save}>保存</p>
+          {save}
         </header>
         <ul className="registrationT_bookList">
           <li className="registrationT_bookFirst registrationT_bookPadding">
-            <p>头像</p>
-            <p className="enter"></p>
-            <img src={require('./img/heh.png')}/>
+              <input id="input-file" type="file" onChange={this.imgChange} ref='file'/>
+              <p>头像</p>
+              <p className="enter"></p>
+              <img src={headImage} ref='headImage'/>
           </li>
           <li className="registrationT_bookFirstOne registrationT_bookPadding">
             <p>昵称</p>
-            <input type="text"/>
+            <input type="text" ref="inputname"/>
           </li>
           <li className="registrationT_bookFirstOne registrationT_bookPadding clear heightAuot">
-            <p>简介</p>
-            <div contentEditable="true" className="textarea"></div>
+            <p>标签</p>
+            <div contentEditable="true" className="textarea" ref="contentEditable"></div>
           </li>
           <li className="registrationT_bookFirstOne registrationT_bookPadding" onClick={this.sex}>
             <p>性别</p>
             <div className="registrationT_bookSex" ref="sexShow"></div>
-            <p className="enter"></p>
-          </li>
-          <li className="registrationT_bookFirstOne registrationT_bookPadding">
-            <p>城市</p>
-            <input type="text"/>
-            <p className="enter"></p>
-          </li>
-          <li className="registrationT_bookFirstOne registrationT_bookPadding" onClick={this.birthday}>
-            <p>生日</p>
-            <div className="registrationT_bookSex">未设置</div>
             <p className="enter"></p>
           </li>
         </ul>
@@ -170,4 +194,14 @@ ulT = this.refs.birthdayBoxListOutSec.offsetTop;
     )
   }
 }
+// <li className="registrationT_bookFirstOne registrationT_bookPadding">
+//   <p>城市</p>
+//   <input type="text"/>
+//   <p className="enter"></p>
+// </li>
+// <li className="registrationT_bookFirstOne registrationT_bookPadding" onClick={this.birthday}>
+//   <p>生日</p>
+//   <div className="registrationT_bookSex">未设置</div>
+//   <p className="enter"></p>
+// </li>
 export default RegistrationT

@@ -7,7 +7,8 @@ class Moviecon extends Component{
     this.state = {
       data:[],
       onOff:true,
-      num:1
+      num:1,
+      dlH:18,
     }
   }
   componentDidMount(){
@@ -20,20 +21,6 @@ class Moviecon extends Component{
     }else{
       jump = window.location.pathname.split('/')[2];
     }
-    // function tohanzi(data)
-    // {
-    //     if(data == '') return '请输入十六进制unicode';
-    //     data = data.split('\u');
-    //     var str ='';
-    //     for(var i=0;i<data.length;i++)
-    //     {
-    //         str+=String.fromCharCode(parseInt(data[i],16).toString(10));
-    //     }
-    //     return str;
-    // }
-    // console.log(decodeURI(jump))
-    // console.log(/[\u4e00-\u9fa5]+/.test(decodeURI(jump)))
-
     if(/[\u4e00-\u9fa5]+/.test(decodeURI(jump))){
       urlLs = 'https://api.douban.com/v2/movie/search?q='+decodeURI(jump);
     }else{
@@ -47,29 +34,16 @@ class Moviecon extends Component{
       },
       dataType:'jsonp',
       success:function(data){
+        console.log(data)
         that.setState({
           data:data
         });
       }
     })
-    // var num = 1;
-    // var onOff = true;
-      // document.addEventListener('touchmove',function(){
-      //     console.log(1);
-      // });
-      $('#page').scroll(function(){
-        // var index = $('li').eq(minHeight());
-        // if(index.height() <= $(window).innerHeight() + $(window).scrollTop()){
-        //   if(onOff){
-        //     num++;
-        //     xr();
-        //   }
-        // };
-        console.log(1);
-      })
   }
   touch = (ev) => {
-    if(Math.abs(this.refs.page.getBoundingClientRect().top)+window.innerHeight >= this.refs.moviecon.clientHeight){
+    let dlH = this.refs.movieconDlist.clientHeight/(this.state.dlH/3)
+    if(Math.abs(this.refs.page.getBoundingClientRect().top)+window.innerHeight >= this.refs.moviecon.clientHeight - dlH*2){
       if(this.state.onOff){
         this.setState({
           onOff:false
@@ -94,7 +68,8 @@ class Moviecon extends Component{
             console.log(data);
             that.setState({
               data:data,
-              onOff:true
+              onOff:true,
+              dlH:data.subjects.length,
             });
           }
         })
@@ -124,7 +99,7 @@ class Moviecon extends Component{
       <div id="page" ref="page">
           <div id="moviecon" onTouchMove={this.touch} ref="moviecon" onWheel={this.touch}>
   					<h3>{this.props.location.state}</h3>
-  					<div className="clear">
+  					<div className="clear" ref="movieconDlist">
   							{movie_propaganda}
   					</div>
   			</div>
