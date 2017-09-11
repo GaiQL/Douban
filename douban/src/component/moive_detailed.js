@@ -52,6 +52,7 @@ class Moive_detailed extends Component{
     }
   }
   componentDidMount(){
+    this.refs.node.scrollIntoView();
     let that = this;
     $.ajax({
       url:'https://api.douban.com/v2/movie/subject/'+this.props.location.state,
@@ -146,7 +147,7 @@ class Moive_detailed extends Component{
       }
     }
     return (
-      <div id="page">
+      <div id="page" ref="node">
         <div id="moive_detailed">
           <h1 className="moive_detailedTitle">{data.title}</h1>
           <section className="clear">

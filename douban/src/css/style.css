@@ -1066,3 +1066,30 @@ img {
   height: 48%;
   margin: 1%;
 }
+.search_close {
+  font-size: 0.75555556rem;
+  color: #42bd56;
+  line-height: 2.71111111rem;
+  height: 2.71111111rem;
+  float: left;
+  margin-left: 0.84444444rem;
+}
+.search_input {
+  float: left;
+  width: 10.82222222rem;
+  height: 1.37777778rem;
+  background: url(../img/search.png) no-repeat 0.75555556rem 0.33333333rem #f3f3f3;
+  background-size: 0.75555556rem 0.75555556rem;
+  border: 0;
+  padding: 0;
+  font-size: 0.75555556rem;
+  line-height: 0.75555556rem;
+  padding-left: 1.73333333rem;
+  border-radius: 0.44444444rem;
+  margin-left: 0.53333333rem;
+  margin-top: 0.66666667rem;
+}
+.search_top {
+  height: 2.71111111rem;
+  border-bottom: 0.06666667rem solid #f3f3f3;
+}

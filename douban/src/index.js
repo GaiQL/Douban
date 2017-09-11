@@ -13,7 +13,7 @@ import {changeSqd} from './component/data/dataLogin';
 import Personal from './component/personal';
 import RegistrationT from './component/registrationT';
 import Movie_list from './component/movie_list';
-import Personal_movie from './component/personal_movie';
+import {Personal_movie} from './component/personal_movie';
 import Personal_movieCollect from './component/personal_movieCollect';
 import Personal_moviestar from './component/personal_moviestar';
 import Search from './component/search';
@@ -49,7 +49,7 @@ class Movie_classification extends Component{
 }
 class Movie_listList extends Component{
   render(){
-    console.log(this.props);
+    console.log(this.props.search);
     return (
       <Link to={
         {
@@ -57,16 +57,17 @@ class Movie_listList extends Component{
           jump:this.props.search,
           id:this.props.id
         }
-      }><li>{this.props.findmoive}</li></Link>
+      } onClick={this.click}><li>{this.props.findmoive}</li></Link>
     )
   }
 }
 class Totality extends Component{
+  componentDidMount(){
+    this.refs.node.scrollIntoView();
+  }
   render(){
     let {movie_classification} = this.props.data;
     let {movie_list} = this.props.data;
-    console.log(this.props.data)
-    console.log(movie_list)
     let list = movie_classification.map((e,i)=>{
       let data = {
         fication:e,
@@ -83,9 +84,8 @@ class Totality extends Component{
       }
       return  <Movie_listList {...data}/>
     });
-    console.log(this.props);
     return (
-      <div>
+      <div ref="node">
         <div id="page">
               <Moive_show />
               <Moive_showS />
@@ -219,6 +219,7 @@ function counter(state = JSON.parse(localStorage.getItem('data')), action) {
         landObj.registrationNow = {
           ...landObj.registrationNow,
           userName:action.username,
+          headImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504687565409&di=4f7796c278827f6d9a46560176896def&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F59%2F55%2F67n58PICB7J_1024.png',
           Personal_movieWant:[],
           Personal_movieLook:[],
           Personal_collect:[],
@@ -227,6 +228,8 @@ function counter(state = JSON.parse(localStorage.getItem('data')), action) {
           sex:action.sex,
         }
         landObj.user.push(landObj.registrationNow)
+        alert('注册成功，返回登录')
+        window.location.reload()
         landObj.registrationFinish = true;
       }
       localStorage.setItem('data',JSON.stringify(landObj))
@@ -258,7 +261,12 @@ function counter(state = JSON.parse(localStorage.getItem('data')), action) {
         return landObj
       case 'movielist':
         var landObj = deepClone(state);
-        landObj.movie_list[action.listid].data = action.movieList;
+        landObj.movie_list.forEach((e,i)=>{
+          if(e.search === action.listid){
+            e.data = action.movieList;
+            landObj.movie_listNow = e;
+          }
+        })
         localStorage.setItem('data',JSON.stringify(landObj))
         return landObj
       case 'personal_movieWant':
@@ -315,13 +323,15 @@ function counter(state = JSON.parse(localStorage.getItem('data')), action) {
           let Personal_collectArr = [];
           landObj.user.forEach((e,i)=>{
             if(e.id===landObj.userNow.id){
+              console.log(e.Personal_collect)
               e.Personal_collect.forEach((e,i)=>{
-                Personal_collectArr.push(e.listId);
+                console.log(e.search)
+                Personal_collectArr.push(e.search);
               })
-              if(!Personal_collectArr.includes(action.obj.listId)){
+              if(!Personal_collectArr.includes(action.obj.search)){
                   e.Personal_collect.push(action.obj);
                   landObj.movie_list.forEach((e,i)=>{
-                    if(e.listId === action.obj.listId){
+                    if(e.search === landObj.movie_listNow.search){
                       e.loveNum++;
                     }
                   })
@@ -333,14 +343,15 @@ function counter(state = JSON.parse(localStorage.getItem('data')), action) {
           landObj.user.forEach((e,i)=>{
             if(e.id === landObj.userNow.id){
               e.Personal_collect = e.Personal_collect.filter((e,i)=>{
-                if(e.listId === action.obj.listId){
+                if(e.search === action.obj.search){
                   landObj.movie_list.forEach((e,i)=>{
-                    if(e.listId === action.obj.listId){
+                    if(e.search === landObj.movie_listNow.search){
                       e.loveNum--;
                     }
                   })
                 }
-                return e.listId !== action.obj.listId;
+                console.log(e.search,)
+                return e.search !== action.obj.search;
               })
               landObj.userNow = e;
             }
@@ -404,6 +415,11 @@ function counter(state = JSON.parse(localStorage.getItem('data')), action) {
         }
         localStorage.setItem('data',JSON.stringify(landObj));
         return landObj;
+      case 'unmount':
+        var landObj = deepClone(state);
+        landObj.movie_listNow = {};
+        localStorage.setItem('data',JSON.stringify(landObj));
+        return landObj;
     default:
       return state
   }
@@ -450,6 +466,9 @@ function mapDispatchToPropss(dispatch) {
     },
     headImageChange:(img)=>{
       dispatch({ type: 'headImageChange',img:img});
+    },
+    unmount:()=>{
+      dispatch({ type: 'unmount'});
     }
   }
 }
@@ -491,6 +510,7 @@ class Lqq extends Component{
               if(this.props.data.landfallBol){
                 return <div>{header}<Personal {...props}{...this.props}/></div>
               }else{
+                alert('登录后添加')
                 return <Redirect to="/login" />
               }
             }}></Route>
@@ -501,7 +521,7 @@ class Lqq extends Component{
                 return <RegistrationT {...this.props}/>
               }
             }}></Route>
-            <Route exact path="/movie_list/:id" render={(props)=>{
+            <Route path="/movie_list/:id" render={(props)=>{
               return <div>{header}<Movie_list {...this.props}{...props}/></div>
             }}></Route>
             <Route path="/personal/movie" render={(props)=>{
@@ -517,7 +537,7 @@ class Lqq extends Component{
               return <div>{header}<div id='page'><RegistrationT {...this.props}{...props}/></div></div>
             }}></Route>
             <Route path="/search" render={(props)=>{
-              return <div>{header}<div id='page'><Search {...this.props}{...props}/></div></div>
+              return <div><Search {...this.props}{...props}/></div>
             }}></Route>
           </Switch>
         </div>

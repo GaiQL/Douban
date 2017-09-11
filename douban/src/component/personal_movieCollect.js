@@ -3,6 +3,7 @@ import {Link,Route} from 'react-router-dom';
 class Personal_movieCollectLi extends Component{
   render(){
     let {inner} = this.props
+    console.log(inner)
     return (
       <Link to={
         {
@@ -34,9 +35,9 @@ class Personal_movieCollectLi extends Component{
 class Personal_movieCollect extends Component{
   render(){
     let {data} = this.props;
-    console.log(data)
     let personal_movieCollectLi = null;
     personal_movieCollectLi = data.userNow.Personal_collect.map((e,i)=>{
+      console.log(data.userNow.Personal_collect)
       let dataA = {
         key:i,
         inner:data.userNow.Personal_collect[i]

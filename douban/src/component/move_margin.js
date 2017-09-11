@@ -64,6 +64,7 @@ class Move_margin extends Component{
     }
   }
   componentDidMount(){
+    this.refs.node.scrollIntoView();
     let that = this;
     let jump = null;
     if(this.props.location.jump){
@@ -125,7 +126,7 @@ class Move_margin extends Component{
       move_filmmakerCooperationLW = 166*n;
     }
     return (
-      <div id="page">
+      <div id="page" ref="node">
         <div className="move_margin">
   				<h3 className="move_filmmakerTitle">{data.name} - {data.name_en}</h3>
   				<section className="move_filmmakerIntroduce clear">

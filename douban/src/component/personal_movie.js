@@ -30,7 +30,6 @@ class Personal_movie extends Component{
   }
   render(){
     console.log(this.props.data.userNow)
-
     return (
       <div id="page">
         <section className="personal_movieTop clear">
@@ -144,4 +143,5 @@ class Personal_movieLook extends Component{
     )
   }
 }
-export default Personal_movie;
+export {Personal_movie};
+export {Personal_movieWLlist};

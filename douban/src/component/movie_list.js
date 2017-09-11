@@ -48,6 +48,16 @@ class Movie_listParticularsL extends Component{
     )
   }
 }
+// class Movie_list extends Component{
+//   render(){
+//     return (
+//       <div>
+//         <Movie_listIn {...this.props}/>
+//         <Route path='/movie_list/美国/2' component={Movie_list}/>
+//       </div>
+//     )
+//   }
+// }
 class Movie_list extends Component{
   constructor(){
     super();
@@ -56,160 +66,157 @@ class Movie_list extends Component{
       num:1
     }
   }
+  componentWillUnmount(){
+    this.props.unmount();
+  }
   componentDidMount(){
+    this.refs.node.scrollIntoView();
     let that = this;
     let jump = null;
-    let id = 0;
+    let id = decodeURI(window.location.pathname.split('/')[2]);
+    let num = Number(window.location.pathname.split('/')[3]);
+    if(num){
+      this.setState({
+        num:num
+      },()=>{
+        $.ajax({
+          url:'https://api.douban.com/v2/movie/search?tag='+decodeURI(jump),
+          data:{
+            count:10,
+            start:(that.state.num-1)*10
+          },
+          dataType:'jsonp',
+          success:function(data){
+            console.log(2);
+            console.log(that.state.num,data)
+            that.props.movielist(data,id);
+          }
+        })
+      })
+    }else{
+      this.setState({
+        num:1
+      },()=>{
+        $.ajax({
+          url:'https://api.douban.com/v2/movie/search?tag='+decodeURI(jump),
+          data:{
+            count:10,
+            start:(that.state.num-1)*10
+          },
+          dataType:'jsonp',
+          success:function(data){
+            console.log(that.state.num,data)
+            that.props.movielist(data,id);
+          }
+        })
+      })
+    }
     if(this.props.location.jump){
       jump = this.props.location.jump;
     }else{
       jump = window.location.pathname.split('/')[2];
     }
-    if(decodeURI(jump) == 'top250'){
-      id = 0;
-    }else if(decodeURI(jump) == '悬疑罪案'){
-      id = 1;
-    }else if(decodeURI(jump) == '美国'){
-      id = 2;
-    }else if(decodeURI(jump) == '女孩'){
-      id = 3;
-    }
-    $.ajax({
-      url:'https://api.douban.com/v2/movie/search?q='+decodeURI(jump),
-      data:{
-        count:10,
-      },
-      dataType:'jsonp',
-      success:function(data){
-        that.props.movielist(data,id);
-      }
-    })
+
   }
   unfurled = () => {
     this.setState({
       onOff:true
     })
   }
+  prev = () => {
+    console.log(this.state.num)
+    this.props.unmount();
+    this.refs.node.scrollIntoView();
+    console.log(this.state.num)
+      let jump = null;
+      if(this.props.location.jump){
+        jump = this.props.location.jump;
+      }else{
+        jump = window.location.pathname.split('/')[2];
+      }
+      let id = decodeURI(window.location.pathname.split('/')[2]);
+      let that = this;
+      this.setState({
+        num:--this.state.num
+      })
+      $.ajax({
+        url:'https://api.douban.com/v2/movie/search?tag='+decodeURI(jump),
+        data:{
+          count:10,
+          start:(this.state.num-1)*10
+        },
+        dataType:'jsonp',
+        success:function(data){
+          that.props.movielist(data,id);
+        }
+      })
+  }
   next = () => {
-    console.log(this.props.match)
-    let that = this;
+  this.props.unmount();
+  this.refs.node.scrollIntoView();
     let jump = null;
-    let id = 0;
-    let num = window.location.pathname.split('/')[3];
-    console.log(this.props.match)
     if(this.props.location.jump){
       jump = this.props.location.jump;
     }else{
       jump = window.location.pathname.split('/')[2];
     }
-    if(decodeURI(jump) == 'top250'){
-      id = 0;
-    }else if(decodeURI(jump) == '悬疑罪案'){
-      id = 1;
-    }else if(decodeURI(jump) == '美国'){
-      id = 2;
-    }else if(decodeURI(jump) == '女孩'){
-      id = 3;
-    }
+    let id = decodeURI(window.location.pathname.split('/')[2]);
+    let that = this;
+    this.setState({
+      num:++this.state.num
+    })
     $.ajax({
       url:'https://api.douban.com/v2/movie/search?tag='+decodeURI(jump),
       data:{
         count:10,
-        start:num*10
+        start:(this.state.num-1)*10
       },
       dataType:'jsonp',
       success:function(data){
         that.props.movielist(data,id);
       }
     })
-    this.setState({
-      num:++this.state.num
-    })
   }
-  //每一次路由跳转后，URL改变，     组件没有改变，路由改变，通过路由的改变刷新数据
-                                //回退的时候有URL值，可以回退到前一次的数据页面
-  //获取不同的数据，
-  // componentWillReceiveProps(){
-  //   console.log(this.props.match);
-  //   let that = this;
-  //   let jump = null;
-  //   let id = 0;
-  //   if(this.props.location.jump){
-  //     jump = this.props.location.jump;
-  //   }else{
-  //     jump = window.location.pathname.split('/')[2];
-  //   }
-  //   if(decodeURI(jump) == 'top250'){
-  //     id = 0;
-  //   }else if(decodeURI(jump) == '不正常'){
-  //     id = 1;
-  //   }else if(decodeURI(jump) == '悬疑惊悚'){
-  //     id = 2;
-  //   }
-  //   $.ajax({
-  //     url:'https://api.douban.com/v2/movie/search?q='+decodeURI(jump),
-  //     data:{
-  //       count:10,
-  //       start:0
-  //     },
-  //     dataType:'jsonp',
-  //     success:function(data){
-  //       that.props.movielist(data,id);
-  //     }
-  //   })
-  // }
   render(){
-    let id = 1;
-    let jump = null;
-    if(this.props.location){
-      jump = this.props.location.jump;
-    }else{
-      jump = window.location.pathname.split('/')[2];
-    }
-    if(decodeURI(jump) == 'top250'){
-      id = 0;
-    }else if(decodeURI(jump) == '悬疑罪案'){
-      id = 1;
-    }else if(decodeURI(jump) == '美国'){
-      id = 2;
-    }else if(decodeURI(jump) == '女孩'){
-      id = 3;
-    }
-    let {movie_list} = this.props.data;
+    let {movie_listNow} = this.props.data;
     let movielist = null;
-    if(movie_list[id].data){
-      movielist = movie_list[id].data.subjects.map((e,i)=>{
+    if(movie_listNow.data){
+      movielist = movie_listNow.data.subjects.map((e,i)=>{
         let data = {
           inner:e,
           key:i,
         }
         return  <Movie_listParticularsL {...data}/>
       });
-      movie_list = movie_list[id]
     }
     let listProfile = '';
+    let prevbtn = null;
     if(this.state.onOff){
-      listProfile = movie_list.listProfileAll;
+      listProfile = movie_listNow.listProfileAll;
     }else{
-      listProfile = movie_list.listProfileShort;
+      listProfile = movie_listNow.listProfileShort;
     }
-    console.log(movie_list)
+    if(!(this.state.num <= 1)){
+      prevbtn = <Link to={this.props.match.url+'/'+(this.state.num-1)} onClick={this.prev}><div>上页</div></Link>
+    }else{
+      prevbtn = <div className="movie_listPageUDC">上页</div>
+    }
     return (
-      <div id="page">
+      <div id="page" ref="node">
       <div className="movie_listPad">
         <section className="movie_listTOP">
-          <p>{movie_list.listName}</p>
-          <p>{movie_list.listAuthor}</p>
+          <p>{movie_listNow.listName}</p>
+          <p>{movie_listNow.listAuthor}</p>
           <p>{listProfile}<br></br><span style={{color:"#42BD56"}} onClick={this.unfurled} className={this.state.onOff?'hidden':''}>(展开)</span></p>
         </section>
-        <Movie_listLove movie_list={movie_list}{...this.props}/>
+        <Movie_listLove {...this.props}/>
         <section className="movie_listParticulars">
           {movielist}
         </section>
         <section className="movie_listPage">
           <p>· {this.state.num} ·</p>
           <div className="movie_listPageUD clear">
-            <div className="movie_listPageUDC">上页</div>
+            {prevbtn}
             <Link to={this.props.match.url+'/'+(this.state.num+1)} onClick={this.next}><div>下页</div></Link>
           </div>
         </section>
@@ -237,48 +244,48 @@ class Movie_listLove extends Component{
   }
   collect = () => {
     let id = 1;
+    let {movie_listNow} = this.props.data;
+    console.log(movie_listNow)
+    let jump = window.location.pathname.split('/')[2];
+    this.setState({
+      onOff:!this.state.onOff
+    },()=>{
+      this.props.personal_collect(movie_listNow,this.state.onOff);
+    })
+  }
+  componentDidMount(){
     let jump = null;
-    let {movie_list} = this.props.data;
     if(this.props.location.jump){
       jump = this.props.location.jump;
     }else{
       jump = window.location.pathname.split('/')[2];
     }
-    if(decodeURI(jump) == 'top250'){
-      id = 0;
-    }else if(decodeURI(jump) == '悬疑罪案'){
-      id = 1;
-    }else if(decodeURI(jump) == '美国'){
-      id = 2;
-    }else if(decodeURI(jump) == '女孩'){
-      id = 3;
-    }
-    this.setState({
-      onOff:!this.state.onOff
-    },()=>{
-      this.props.personal_collect(movie_list[id],this.state.onOff);
-    })
-  }
-  componentDidMount(){
-    let {data,movie_list} = this.props;
+    let {data} = this.props;
+    let {movie_listNow} = this.props.data
+    console.log(jump)
     if(data.landfallBol){
       data.userNow.Personal_collect.forEach((e,i)=>{
-        if(movie_list.listId === e.listId){
+
+        if(jump === e.search){
           this.setState({
             onOff:true
+          },()=>{
+            console.log(this.state.onOff)
           })
         }
       })
     }
   }
   render(){
+    let {movie_listNow} = this.props.data
+    console.log(movie_listNow)
     if(this.props.data.landfallBol){
       return (
-        <section className="movie_listLove"><span onClick={this.collect} className={this.state.onOff?'movie_listRedLove':''}>{this.props.movie_list.loveNum}</span></section>
+        <section className="movie_listLove"><span onClick={this.collect} className={this.state.onOff?'movie_listRedLove':''}>{this.props.data.movie_listNow.loveNum}</span></section>
       )
     }else{
       return (
-        <section className="movie_listLove"><Link to='/personal'><span>{this.props.movie_list.loveNum}</span></Link></section>
+        <section className="movie_listLove"><Link to='/personal'><span>{this.props.data.movie_listNow.loveNum}</span></Link></section>
       )
     }
   }

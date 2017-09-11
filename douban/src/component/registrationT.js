@@ -23,7 +23,6 @@ class RegistrationT extends Component{
       alert('昵称不能为空');
       return;
     }
-    console.log(1);
     this.props.registrationFinishT(this.refs.inputname.value,this.refs.contentEditable.innerHTML,this.refs.sexShow.innerHTML);
   }
   sex = () => {
@@ -117,7 +116,7 @@ ulT = this.refs.birthdayBoxListOutSec.offsetTop;
       headImage = this.props.data.userNow.headImage
     }else{
       save = <p onClick={this.save}>保存</p>
-      headImage = require("./img/heh.png")
+      headImage = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1504687565409&di=4f7796c278827f6d9a46560176896def&imgtype=0&src=http%3A%2F%2Fpic.58pic.com%2F58pic%2F15%2F59%2F55%2F67n58PICB7J_1024.png'
     }
     return (
       <div>

@@ -8,7 +8,7 @@ var dataLogin = {
           userName:'盖',
           account:'g666',
           password:'1234',
-          headImage:'',
+          headImage:'./img/heh.png',
           gender:'男',
           Personal_movieWant:[],
           Personal_movieLook:[],
@@ -22,7 +22,7 @@ var dataLogin = {
           userName:'彭博',
           account:'p666',
           password:'1234',
-          headImage:'',
+          headImage:'./img/heh.png',
           gender:'男',
           Personal_movieWant:[],
           Personal_movieLook:[],
@@ -45,10 +45,11 @@ var dataLogin = {
   liH:0,
   page:1,
   movie_classification:['经典','冷门佳片','豆瓣高分','动作','喜剧','悬疑','恐怖','科幻','文艺','治愈','成长','动画','华语','欧美','韩国','日本'],
+  movie_listNow:{},
   movie_list:[
     {
       listName:'同时入选IMDB250和豆瓣电影250的电影',
-      listId:1,
+      listId:0,
       listAuthor:'东方快车',
       listProfileShort:'同时入选IMDB250和豆瓣电影250的电影2016年3月30日更新感谢影迷朋友对这个豆列的支持，已...',
       listProfileAll:'同时入选IMDB250和豆瓣电影250的电影2016年3月30日更新感谢影迷朋友对这个豆列的支持，已经有超过50000人关注了，今天根据IMDB250和豆瓣电影250最新排名进行更新，并增加了其他只进入IMDBtop100或豆瓣电影top100的影片，希望大家继续支持。',
@@ -58,7 +59,7 @@ var dataLogin = {
     },
     {
       listName:'带你进入不正常的世界',
-      listId:2,
+      listId:1,
       listAuthor:'Jasmine 傅',
       listProfileShort:'悬疑！ 惊悚！ 罪案 冒险 科考 实验 细菌病毒... 鬼怪 丧尸 ......',
       listProfileAll:'悬疑！ 惊悚！ 罪案 冒险 科考 实验 细菌病毒... 鬼怪 丧尸 疾病 心理 灵异！ 邪术 变态 离奇故事 人格分裂 精神分裂 心理障碍 …意外结局！…恐怖气氛… 非人类 凶猛生物 无人生还的旅行 离奇死亡 时空错乱 超能力 预言 穿越 超自然 世界末日，人类末日之战 打不死的英雄世界，再稍微来一点点魔幻~ 奇幻……（个人添加，难免不全。）',
@@ -68,7 +69,7 @@ var dataLogin = {
     },
     {
       listName:'美国生活面面观',
-      listId:3,
+      listId:2,
       listAuthor:'Griet',
       listProfileShort:'最真实的美国平凡人的日常生活。让你从不同层面了解这个一...',
       listProfileAll:'最真实的美国平凡人的日常生活。让你从不同层面了解这个一国家。',
@@ -78,7 +79,7 @@ var dataLogin = {
     },
     {
       listName:'女孩们的故事',
-      listId:4,
+      listId:3,
       listAuthor:'惟解漫天作雪飞',
       listProfileShort:'或真实、或梦幻；或甜蜜、或痛苦；但都是女孩们的事儿...',
       listProfileAll:'或真实、或梦幻；或甜蜜、或痛苦；但都是女孩们的事儿。（排名不分先后，顺序按国别为日本、欧美、泰国、国产及港台、韩国）只收5分以上的片子【这个标准够低了】',
