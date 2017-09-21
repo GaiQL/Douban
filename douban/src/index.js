@@ -34,127 +34,14 @@ import {
 import './css/style.css';
 import './css/reglogcss.css';
 import './component/pixel';
-class Movie_classification extends Component{
-  render(){
-    return (
-      <Link to={
-        {
-          pathname:"/Moviecon/"+this.props.fication,
-          state:this.props.fication,
-          jump:this.props.fication
-        }
-      }><li>{this.props.fication}<span></span></li></Link>
-    )
-  }
-}
-class Movie_listList extends Component{
-  render(){
-    console.log(this.props.search);
-    return (
-      <Link to={
-        {
-          pathname:"/movie_list/"+this.props.search,
-          jump:this.props.search,
-          id:this.props.id
-        }
-      } onClick={this.click}><li>{this.props.findmoive}</li></Link>
-    )
-  }
-}
-class Totality extends Component{
-  componentDidMount(){
-    this.refs.node.scrollIntoView();
-  }
-  render(){
-    let {movie_classification} = this.props.data;
-    let {movie_list} = this.props.data;
-    let list = movie_classification.map((e,i)=>{
-      let data = {
-        fication:e,
-        key:i,
-      }
-      return  <Movie_classification {...data}/>
-    });
-    let findmoiveList = movie_list.map((e,i)=>{
-      let data = {
-        findmoive:e.listName,
-        search:e.search,
-        key:i,
-        id:i
-      }
-      return  <Movie_listList {...data}/>
-    });
-    return (
-      <div ref="node">
-        <div id="page">
-              <Moive_show />
-              <Moive_showS />
-              <Moive_showT />
-        </div>
-        <section className="moive_findmoive">
-          <header className="moive_head">
-            <h3>发现好电影</h3>
-          </header>
-          <div className="moive_findmoiveListOut">
-            <ul className="moive_findmoiveList clear">
-              {findmoiveList}
-            </ul>
-          </div>
-        </section>
-        <section className="moive_classify">
-          <header className="moive_head">
-            <h3>分类浏览</h3>
-          </header>
-          <ul className="moive_classifylist clear">
-            {list}
-          </ul>
-        </section>
-        <section className="model_footer">
-          <dl className="model_footerlist clear">
-            <dt><img src="https://img3.doubanio.com/f/talion/7837f29dd7deab9416274ae374a59bc17b5f33c6/pics/card/douban-app-logo.png"/></dt>
-            <dd>
-              <p>豆瓣</p>
-              <p>我们的精神角落</p>
-            </dd>
-          </dl>
-          <p className="model_footerAdd">免费下载 Android 客户端</p>
-        </section>
-      </div>
-    )
-  }
-}
-class Header extends Component{
-  render(){
-    let land = null;
-    let onOff = null;
-    if(this.props.data){
-      onOff = this.props.data.landfallBol
-    }
-    if(onOff){
-      land = <Link to="/personal"><li id="account">{this.props.data.userNow.userName}</li></Link>
 
-    }else{
-      land = <Link to="/login"><li>登录</li></Link>
-    }
-    return (
-      <header id="top" className="clear" ref="top">
-        <h3><Link to="/"><img src='//img3.doubanio.com/dae/accounts/resources/c936707/movie/assets/lg_movie_a12_2.png'/></Link></h3>
-        <ul className="clear" id="nav">
-          {land}
-          <Link to={
-            {
-              pathname:'/search'
-            }
-          }><li className="hunt"><img src={require("./img/ss.png")}/></li></Link>
-        </ul>
-      </header>
-    )
-  }
-}
 // url(//img3.doubanio.com/dae/accounts/resources/c936707/movie/assets/lg_movie_a12_2.png) no-repeat 0 12px
 // <Link to="/moive"><li>电影</li></Link>
 // <li>图书</li>
 // <li>广播</li>
+if(!window.localStorage.length){
+  localStorage.setItem('data',JSON.stringify(dataLogin))
+}
 const store = createStore(counter);
 const deepClone=(obj)=>{
    var proto=Object.getPrototypeOf(obj);
@@ -175,10 +62,9 @@ const personal_movieDelete = {type:'personal_movieDelete'}
 const personal_moviestar = {type:'personal_moviestar'}
 const headImageChange = {type:'headImageChange'}
 
-if(!window.localStorage.length){
-  localStorage.setItem('data',JSON.stringify(dataLogin))
-}
-function counter(state = JSON.parse(localStorage.getItem('data')), action) {
+
+
+  function counter(state = JSON.parse(localStorage.getItem('data')), action) {
   switch (action.type) {
     case 'landfallBol':
       console.log(action.data)
@@ -421,6 +307,7 @@ function counter(state = JSON.parse(localStorage.getItem('data')), action) {
         localStorage.setItem('data',JSON.stringify(landObj));
         return landObj;
     default:
+      console.log(state)
       return state
   }
 }
@@ -472,8 +359,143 @@ function mapDispatchToPropss(dispatch) {
     }
   }
 }
+class Movie_classification extends Component{
+  render(){
+    return (
+      <Link to={
+        {
+          pathname:"/Moviecon/"+this.props.fication,
+          state:this.props.fication,
+          jump:this.props.fication
+        }
+      }><li>{this.props.fication}<span></span></li></Link>
+    )
+  }
+}
+class Movie_listList extends Component{
+  render(){
+    console.log(this.props.search);
+    return (
+      <Link to={
+        {
+          pathname:"/movie_list/"+this.props.search,
+          jump:this.props.search,
+          id:this.props.id
+        }
+      } onClick={this.click}><li>{this.props.findmoive}</li></Link>
+    )
+  }
+}
+class Totality extends Component{
+  componentDidMount(){
+    this.refs.node.scrollIntoView();
+  }
+  render(){
+    console.log(JSON.parse(localStorage.getItem('data')),this.props.data)
+    let {movie_classification} = this.props.data;
+    let {movie_list} = this.props.data;
+    let list = movie_classification.map((e,i)=>{
+      let data = {
+        fication:e,
+        key:i,
+      }
+      return  <Movie_classification {...data}/>
+    });
+    let findmoiveList = movie_list.map((e,i)=>{
+      let data = {
+        findmoive:e.listName,
+        search:e.search,
+        key:i,
+        id:i
+      }
+      return  <Movie_listList {...data}/>
+    });
+    return (
+      <div ref="node">
+        <div id="page">
+              <Moive_show />
+              <Moive_showS />
+              <Moive_showT />
+        </div>
+        <section className="moive_findmoive">
+          <header className="moive_head">
+            <h3>发现好电影</h3>
+          </header>
+          <div className="moive_findmoiveListOut">
+            <ul className="moive_findmoiveList clear">
+              {findmoiveList}
+            </ul>
+          </div>
+        </section>
+        <section className="moive_classify">
+          <header className="moive_head">
+            <h3>分类浏览</h3>
+          </header>
+          <ul className="moive_classifylist clear">
+            {list}
+          </ul>
+        </section>
+        <section className="model_footer">
+          <dl className="model_footerlist clear">
+            <dt><img src="https://img3.doubanio.com/f/talion/7837f29dd7deab9416274ae374a59bc17b5f33c6/pics/card/douban-app-logo.png"/></dt>
+            <dd>
+              <p>豆瓣</p>
+              <p>我们的精神角落</p>
+            </dd>
+          </dl>
+          <p className="model_footerAdd">免费下载 Android 客户端</p>
+        </section>
+      </div>
+    )
+  }
+}
+class Header extends Component{
+  render(){
+    let land = null;
+    let onOff = null;
+    if(this.props.data){
+      onOff = this.props.data.landfallBol
+    }
+    if(onOff){
+      land = <Link to="/personal"><li id="account">{this.props.data.userNow.userName}</li></Link>
+    }else{
+      land = <Link to="/login"><li>登录</li></Link>
+    }
+    return (
+      <header id="top" className="clear" ref="top">
+        <h3><Link to="/"><img src='//img3.doubanio.com/dae/accounts/resources/c936707/movie/assets/lg_movie_a12_2.png'/></Link></h3>
+        <ul className="clear" id="nav">
+          {land}
+          <Link to={
+            {
+              pathname:'/search'
+            }
+          }><li className="hunt"><img src={require("./img/ss.png")}/></li></Link>
+        </ul>
+      </header>
+    )
+  }
+}
+// var Haha = React.createClass({
+//   getInitialState: function() {//组件相关的状态对象
+//        return {clickNum:0};
+//    },
+//    handClick:function(){
+//      var num = this.state.clickNum;
+//      num++;
+//      this.setState({clickNum:num});
+//    },
+//    render:function(){
+//      return(
+//        <div>
+//         <p onClick={this.handClick}>this.state.clickNum</p>
+//        </div>
+//      )
+//    }
+// })
 class Lqq extends Component{
   render(){
+    console.log(this.props)
     let header = <Header {...this.props}/>
     return (
       <Provider store={store}>
@@ -481,7 +503,7 @@ class Lqq extends Component{
         <div>
           <Switch>
             <Route exact path="/"  render={(props)=>{
-              return <div>{header}<Totality {...props}{...this.props}/></div>
+              return <div>{header}<Totality {...this.props}{...props}/></div>
             }}></Route>
             <Route path="/Moive_detailed/:id" render={(props)=>{
               return <div>{header}<Moive_detailed {...props}{...this.props}/></div>
